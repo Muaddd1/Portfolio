@@ -54,4 +54,15 @@ export const projects: Project[] = [
     github: 'https://github.com/Muaddd1/NexaAI',
     year: '2025',
   },
+  {
+    id: 5,
+    title: 'FreelancerOS',
+    description:
+      'A complete freelancer management SaaS — clients, projects, invoices, proposals, contracts, time tracking, expenses, leads, analytics, and automations. Built with Next.js 14, PostgreSQL, NextAuth, and premium dark mode UI.',
+    tags: ['Next.js 14', 'PostgreSQL', 'NextAuth', 'Prisma', 'SaaS'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    demo: 'https://freelancer-os-gamma.vercel.app',
+    github: 'https://github.com/Muaddd1/FreelancerOS',
+    year: '2026',
+  },
 ];
