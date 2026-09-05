@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Layers, Zap, Smartphone } from 'lucide-react';
+import { Code2, Layers, Zap, Smartphone, Globe, TrendingUp } from 'lucide-react';
 import { personal } from '../data/personal';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -7,6 +7,8 @@ const iconMap: Record<string, React.ElementType> = {
   Layers,
   Zap,
   Smartphone,
+  Globe,
+  TrendingUp,
 };
 
 export default function Services() {

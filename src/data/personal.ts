@@ -51,6 +51,18 @@ export const personal = {
         description:
           'Interfaces that work flawlessly across desktop, tablet, and mobile — every breakpoint considered.',
       },
+      {
+        icon: 'Globe',
+        title: 'Full-Stack Web Apps',
+        description:
+          'End-to-end web applications with Next.js, TypeScript, PostgreSQL, and Prisma — from database design to deployment.',
+      },
+      {
+        icon: 'TrendingUp',
+        title: 'SaaS Product Development',
+        description:
+          'Building and launching subscription-based web products — auth, payments, dashboards, and scalable architecture from day one.',
+      },
     ],
   },
 
