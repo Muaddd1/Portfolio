@@ -16,7 +16,7 @@ export const projects: Project[] = [
     description:
       'A premium client relationship management app for freelancers. Clients, projects, invoices, proposals, contracts, payments — all fully wired with health scoring, dark mode, and localStorage persistence. Built with Next.js 16, Tailwind CSS v4, and Radix UI.',
     tags: ['Next.js 16', 'Tailwind CSS v4', 'Radix UI', 'TypeScript', 'localStorage'],
-    image: 'https://freelancer-crm-ivory.vercel.app/_next/static/media/01-dashboard.d49d4d8e.png',
+    image: 'https://raw.githubusercontent.com/Muaddd1/freelancer-crm-demo/main/screenshots/01-dashboard.png',
     demo: 'https://freelancer-crm-ivory.vercel.app',
     github: 'https://github.com/Muaddd1/freelancer-crm',
     year: '2026',
