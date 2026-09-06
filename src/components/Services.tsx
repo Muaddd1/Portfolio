@@ -29,7 +29,7 @@ export default function Services() {
 
       <div className="container-wide relative z-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div>
             <motion.p
               initial={{ opacity: 0 }}
@@ -51,10 +51,19 @@ export default function Services() {
               <span className="text-gradient">Do</span>
             </motion.h2>
           </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-[14px] text-white/30 max-w-sm leading-relaxed"
+          >
+            End-to-end web solutions — from pixel-perfect interfaces to fully functional web applications.
+          </motion.p>
         </div>
 
         {/* Services grid */}
-        <div className="grid sm:grid-cols-2 gap-px bg-white/[0.05]">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.04]">
           {personal.services.items.map((service, i) => {
             const Icon = iconMap[service.icon] ?? Code2;
             return (
@@ -63,17 +72,21 @@ export default function Services() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-                className="bg-void p-10 lg:p-14 group hover:bg-white/[0.02] transition-colors duration-500"
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
+                className="bg-void p-10 lg:p-12 group hover:bg-white/[0.02] transition-colors duration-500"
               >
                 <div className="flex flex-col h-full">
-                  <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mb-10 group-hover:border-cyan/20 group-hover:bg-cyan-dim transition-all duration-300">
+                  {/* Icon */}
+                  <div className="w-11 h-11 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mb-8 group-hover:border-cyan/20 group-hover:bg-cyan-dim transition-all duration-300">
                     <Icon size={18} className="text-white/40 group-hover:text-cyan transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-display font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-[14px] text-white/35 leading-relaxed flex-1">{service.description}</p>
+
+                  <h3 className="text-lg font-display font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-[13px] text-white/35 leading-relaxed flex-1">{service.description}</p>
+
+                  {/* Bottom index */}
                   <div className="mt-8 pt-8 border-t border-white/[0.05]">
-                    <span className="text-[10px] font-mono tracking-[0.2em] text-cyan/40 uppercase">
+                    <span className="text-[10px] font-mono tracking-[0.2em] text-cyan/30 uppercase">
                       0{i + 1}
                     </span>
                   </div>

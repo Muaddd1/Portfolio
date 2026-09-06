@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200,height=630" />
+  <title>OG Image</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      background: #07090f;
+      font-family: 'Inter', sans-serif;
+      color: #f0f0f5;
+      display: flex;
+      flex-direction: column;
+    }
+    .grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .glow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, rgba(0,212,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .top {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 48px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: #00d4ff; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: #07090f;
+    }
+    .logo-text { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(240,240,245,0.5); letter-spacing: 0.15em; }
+    .badge {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+      color: #00d4ff; background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.2); border-radius: 20px;
+      padding: 4px 14px; letter-spacing: 0.5px;
+    }
+    .body { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 48px; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(0,212,255,0.6); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; }
+    h1 {
+      font-family: 'Syne', sans-serif; font-size: 72px; font-weight: 800;
+      line-height: 1; letter-spacing: -2px; color: #f0f0f5; margin-bottom: 8px;
+    }
+    h1 span { background: linear-gradient(135deg, #00d4ff, #67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .role { font-family: 'Syne', sans-serif; font-size: 72px; font-weight: 800; line-height: 1; letter-spacing: -2px; color: rgba(240,240,245,0.25); }
+    .tagline { font-size: 17px; color: rgba(240,240,245,0.35); margin-top: 20px; max-width: 560px; line-height: 1.6; }
+    .bottom {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 48px; border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .pill-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pill {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(240,240,245,0.3);
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px; padding: 5px 12px; letter-spacing: 0.5px;
+    }
+    .cta {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+      color: #07090f; background: #00d4ff; border-radius: 6px;
+      padding: 10px 20px; letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+
+  <div class="top">
+    <div class="logo">
+      <div class="logo-mark">MS</div>
+      <span class="logo-text">MOUAD SEHLI</span>
+    </div>
+    <span class="badge">Available for projects</span>
+  </div>
+
+  <div class="body">
+    <p class="mono">Frontend Developer — Morocco</p>
+    <h1>Mouad Sehli<span>.</span></h1>
+    <p class="role">Crafting Digital Experiences</p>
+    <p class="tagline">High-performance websites and web applications built with React, TypeScript, Next.js, and Tailwind CSS.</p>
+  </div>
+
+  <div class="bottom">
+    <div class="pill-row">
+      <span class="pill">React</span>
+      <span class="pill">TypeScript</span>
+      <span class="pill">Next.js</span>
+      <span class="pill">Tailwind CSS</span>
+      <span class="pill">Framer Motion</span>
+    </div>
+    <span class="cta">muad-portfolio.vercel.app</span>
+  </div>
+</body>
+</html>
