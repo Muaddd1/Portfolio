@@ -88,13 +88,13 @@ export const personal = {
     heading: "Let's work together.",
     description: 'Have a project in mind or just want to say hello — my inbox is always open.',
     email: 'smoad5456@gmail.com',
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
+    github: 'https://github.com/Muaddd1',
+    linkedin: 'https://www.linkedin.com/in/moad-sehli-553b46283/',
   },
 
   social: {
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
+    github: 'https://github.com/Muaddd1',
+    linkedin: 'https://www.linkedin.com/in/moad-sehli-553b46283/',
     email: 'mailto:smoad5456@gmail.com',
   },
 
