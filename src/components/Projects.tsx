@@ -107,9 +107,9 @@ export default function Projects() {
                         {tag}
                       </span>
                     ))}
-                    {project.id === 6 && (
+                    {project.id !== 1 && (
                       <a
-                        href="https://freelancer-crm-ivory.vercel.app"
+                        href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
