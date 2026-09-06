@@ -60,10 +60,22 @@ export default function Contact() {
     e.preventDefault();
     if (!validate()) return;
     setStatus('sending');
-    // Simulate submission (replace with actual endpoint)
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus('sent');
-    setForm({ name: '', email: '', company: '', projectType: '', budget: '', message: '' });
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to send');
+      }
+      setStatus('sent');
+      setForm({ name: '', email: '', company: '', projectType: '', budget: '', message: '' });
+    } catch {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
   return (

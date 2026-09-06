@@ -56,8 +56,8 @@ export default function Hero() {
 
           {/* Headline — kinetic word-by-word reveal */}
           <h1
-            className="text-[clamp(3.5rem,10vw,9rem)] font-display font-bold leading-[0.93] tracking-tight mb-12 max-w-5xl overflow-hidden"
-            aria-label="Crafting Digital Experiences"
+            className="text-[clamp(3rem,7vw,6.5rem)] font-display font-bold leading-[0.95] tracking-tight mb-12 max-w-5xl overflow-hidden"
+            aria-label="Crafting Digital Experiences That Convert"
           >
             {WORDS.map((word, wi) => (
               <span key={word} className="inline-block overflow-hidden mr-[0.2em]">

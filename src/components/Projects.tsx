@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, ArrowRight, Layers } from 'lucide-react';
+import { ExternalLink, Layers } from 'lucide-react';
 import { projects } from '../data/projects';
 
 function isLiveDemo(url: string): boolean {
@@ -117,34 +117,37 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
           {/* Footer links */}
           <div className="flex items-center gap-4 pt-5 border-t border-white/[0.05]">
+            {/* Primary: Live Demo */}
             {hasLiveDemo && (
               <a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[11px] font-mono text-white/40 hover:text-cyan transition-colors duration-300"
+                className="flex items-center gap-2 text-[11px] font-mono text-cyan hover:text-white transition-colors duration-300"
               >
                 <ExternalLink size={12} />
-                Live Demo
+                View Demo
               </a>
             )}
+            {/* Primary: View Product (for Gumroad) */}
             {isGumroad && (
               <a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[11px] font-mono text-white/40 hover:text-cyan transition-colors duration-300"
+                className="flex items-center gap-2 text-[11px] font-mono text-cyan hover:text-white transition-colors duration-300"
               >
                 <ExternalLink size={12} />
-                Get It
+                View Product
               </a>
             )}
+            {/* Secondary: GitHub */}
             {project.github && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[11px] font-mono text-white/40 hover:text-cyan transition-colors duration-300"
+                className="flex items-center gap-2 text-[11px] font-mono text-white/30 hover:text-white/60 transition-colors duration-300"
               >
                 <GitHubIcon />
                 Source
@@ -156,15 +159,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 Project
               </span>
             )}
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-auto flex items-center gap-2 text-[11px] font-mono text-white/30 hover:text-cyan transition-colors duration-300 group/link"
-            >
-              <span>View</span>
-              <ArrowRight size={12} className="group-hover/link:translate-x-0.5 transition-transform duration-200" />
-            </a>
           </div>
         </div>
       </div>
