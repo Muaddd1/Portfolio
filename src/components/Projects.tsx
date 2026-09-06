@@ -107,6 +107,17 @@ export default function Projects() {
                         {tag}
                       </span>
                     ))}
+                    {project.id === 6 && (
+                      <a
+                        href="https://freelancer-crm-ivory.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-[10px] font-mono tracking-wider text-cyan border border-cyan/20 px-3 py-1 rounded-sm uppercase hover:bg-cyan/10 transition-colors"
+                      >
+                        Try Demo
+                      </a>
+                    )}
                   </div>
                 </div>
 

@@ -7,6 +7,7 @@ const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#work', label: 'Work' },
   { href: '#services', label: 'Services' },
+  { href: 'https://muadme.gumroad.com', label: 'Products', external: true },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -53,10 +54,12 @@ export default function Navbar() {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-10" aria-label="Main navigation">
-              {navLinks.map(({ href, label }) => (
+              {navLinks.map(({ href, label, external }) => (
                 <a
                   key={href}
                   href={href}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noopener noreferrer' : undefined}
                   className="text-[12px] font-mono tracking-[0.15em] text-white/40 hover:text-cyan transition-colors duration-300 uppercase"
                 >
                   {label}
@@ -104,11 +107,13 @@ export default function Navbar() {
               </button>
             </div>
             <nav className="flex-1 flex flex-col justify-center px-6 gap-2">
-              {navLinks.map(({ href, label }, i) => (
+              {navLinks.map(({ href, label, external }, i) => (
                 <motion.a
                   key={href}
                   href={href}
-                  onClick={() => setOpen(false)}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noopener noreferrer' : undefined}
+                  onClick={() => !external && setOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
