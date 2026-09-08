@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Layers } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Layers, ChevronDown, FileText } from 'lucide-react';
 import { projects } from '../data/projects';
 import { useTilt } from '../hooks/useTilt';
 
@@ -12,6 +13,7 @@ const GitHubIcon = () => (
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const isPortfolio = project.id === 1;
   const tilt = useTilt({ max: 4, scale: 1.01 });
+  const [showCase, setShowCase] = useState(false);
 
   return (
     <motion.article
@@ -145,13 +147,70 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 Source
               </a>
             )}
-            {!isPortfolio && (
+            {!isPortfolio && !project.caseStudy && (
               <span className="ml-auto flex items-center gap-1.5 text-[10px] font-mono text-cyan/50 border border-cyan/10 bg-cyan/5 px-3 py-1 rounded-sm uppercase tracking-wider">
                 <Layers size={10} />
                 Project
               </span>
             )}
           </div>
+
+          {/* Case study — the "how I actually think" section */}
+          {project.caseStudy && (
+            <div className="mt-1">
+              <button
+                onClick={() => setShowCase((s) => !s)}
+                className="flex items-center gap-2 text-[11px] font-mono text-cyan/70 hover:text-cyan transition-colors duration-300 uppercase tracking-wider py-3"
+                aria-expanded={showCase}
+              >
+                <FileText size={12} />
+                {showCase ? 'Hide Case Study' : 'Read Case Study'}
+                <ChevronDown
+                  size={12}
+                  className="transition-transform duration-300"
+                  style={{ transform: showCase ? 'rotate(180deg)' : 'none' }}
+                />
+              </button>
+              <AnimatePresence initial={false}>
+                {showCase && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-2 pb-1 flex flex-col gap-5">
+                      <div>
+                        <p className="text-[10px] font-mono text-cyan/50 uppercase tracking-widest mb-2">
+                          The Problem
+                        </p>
+                        <p className="text-[13px] text-white/40 leading-relaxed">
+                          {project.caseStudy.problem}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-mono text-cyan/50 uppercase tracking-widest mb-2">
+                          The Approach
+                        </p>
+                        <p className="text-[13px] text-white/40 leading-relaxed">
+                          {project.caseStudy.approach}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-mono text-cyan/50 uppercase tracking-widest mb-2">
+                          The Result
+                        </p>
+                        <p className="text-[13px] text-white/40 leading-relaxed">
+                          {project.caseStudy.result}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.article>

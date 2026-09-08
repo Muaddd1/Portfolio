@@ -4,6 +4,12 @@ import techzoneImg from '../assets/screenshots/techzone.jpg';
 import freelancerosImg from '../assets/screenshots/freelanceros.jpg';
 import portfolioImg from '../assets/screenshots/portfolio.jpg';
 
+export interface CaseStudy {
+  problem: string;
+  approach: string;
+  result: string;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -14,6 +20,7 @@ export interface Project {
   demoUrl: string;
   github: string;
   year: string;
+  caseStudy?: CaseStudy;
 }
 
 export const projects: Project[] = [
@@ -28,6 +35,14 @@ export const projects: Project[] = [
     demoUrl: 'https://freelancer-crm-ivory.vercel.app',
     github: 'https://github.com/Muaddd1/freelancer-crm',
     year: '2026',
+    caseStudy: {
+      problem:
+        'Clients, projects, invoices, proposals, and contracts all reference each other — a project belongs to a client, invoices and proposals belong to a project, contracts tie back to both. Duplicate that data across records (a client\'s name copied onto every invoice, say) and it drifts the moment something changes — silently, until the numbers stop adding up.',
+      approach:
+        'Each entity is modeled once and referenced by id everywhere else, never copied. Anything derived — the health score, a project\'s outstanding balance, dashboard totals — is computed from the current records instead of stored as its own value that can go stale. Everything persists to localStorage with a schema built to evolve, so a data model change doesn\'t quietly corrupt what\'s already saved.',
+      result:
+        'Mark one invoice paid, and the client\'s health score, the project\'s balance, and the dashboard totals all update correctly from that single change — nothing to remember to update in five places, nothing to go out of sync.',
+    },
   },
   {
     id: 1,
