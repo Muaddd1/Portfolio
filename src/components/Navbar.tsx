@@ -121,10 +121,18 @@ export default function Navbar() {
                 );
               })}
               <a
+                href="/resume.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-[11px] font-mono tracking-[0.12em] uppercase px-4 py-2 rounded-sm border border-white/15 text-white/60 hover:bg-white/5 hover:text-white hover:border-white/30 transition-all duration-300"
+              >
+                Resume
+              </a>
+              <a
                 href="https://muadme.gumroad.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-2 text-[11px] font-mono tracking-[0.12em] uppercase px-4 py-2 rounded-sm border border-cyan/20 text-cyan/70 hover:bg-cyan/10 hover:text-cyan hover:border-cyan/40 transition-all duration-300"
+                className="text-[11px] font-mono tracking-[0.12em] uppercase px-4 py-2 rounded-sm border border-cyan/20 text-cyan/70 hover:bg-cyan/10 hover:text-cyan hover:border-cyan/40 transition-all duration-300"
               >
                 Products
               </a>
@@ -190,12 +198,23 @@ export default function Navbar() {
                 );
               })}
               <motion.a
-                href="https://muadme.gumroad.com"
+                href="/resume.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navLinks.length * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="text-4xl font-display font-bold text-white/20 hover:text-cyan py-3 transition-colors duration-300"
+              >
+                Resume
+              </motion.a>
+              <motion.a
+                href="https://muadme.gumroad.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navLinks.length + 1) * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl font-display font-bold text-white/20 hover:text-cyan py-3 transition-colors duration-300"
               >
                 Products

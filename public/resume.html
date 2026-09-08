@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouad Sehli — Resume</title>
+  <style>
+    :root {
+      --ink: #16181d;
+      --muted: #565b66;
+      --faint: #8a8f99;
+      --accent: #0090ad;
+      --line: #e2e4e8;
+      --bg: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #f2f3f5;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--ink);
+    }
+    .page {
+      max-width: 780px;
+      margin: 40px auto;
+      background: var(--bg);
+      padding: 56px 60px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 10px 40px rgba(0,0,0,0.06);
+    }
+    .print-bar {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 4px 12px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .print-btn {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: 6px;
+      padding: 9px 18px;
+      cursor: pointer;
+    }
+    .print-btn:hover { background: #007690; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin: 0 0 4px;
+      letter-spacing: -0.02em;
+    }
+    .role {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0;
+    }
+    .contact {
+      text-align: right;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .contact a { color: var(--muted); text-decoration: none; }
+    .contact a:hover { text-decoration: underline; color: var(--accent); }
+
+    section { margin-bottom: 26px; }
+    h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+    .summary {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #2a2d33;
+      margin: 0;
+    }
+
+    .entry { margin-bottom: 16px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      margin-bottom: 3px;
+    }
+    .entry-title { font-size: 14.5px; font-weight: 700; color: var(--ink); }
+    .entry-sub { font-size: 12.5px; color: var(--muted); }
+    .entry-period {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--faint);
+      white-space: nowrap;
+    }
+    ul.bullets {
+      margin: 6px 0 0;
+      padding-left: 18px;
+    }
+    ul.bullets li {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #3c4048;
+      margin-bottom: 3px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--muted);
+      background: #f3f4f6;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 3px 8px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 32px;
+    }
+    .skill-cat { margin-bottom: 10px; }
+    .skill-cat-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .skill-cat-items {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 4px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .lang-row:last-child { border-bottom: none; }
+    .lang-name { color: var(--ink); font-weight: 600; }
+    .lang-level { color: var(--muted); }
+
+    footer {
+      margin-top: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 10.5px;
+      color: var(--faint);
+      text-align: center;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .print-bar { display: none; }
+      .page { box-shadow: none; margin: 0; padding: 28px 36px; max-width: 100%; }
+      section { break-inside: avoid; }
+      .entry { break-inside: avoid; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 32px 24px; margin: 16px auto; }
+      header { flex-direction: column; }
+      .contact { text-align: left; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-bar">
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="page">
+    <header>
+      <div>
+        <h1>Mouad Sehli</h1>
+        <p class="role">Frontend Developer</p>
+      </div>
+      <div class="contact">
+        <div>Morocco · Open to full-time &amp; freelance</div>
+        <div><a href="mailto:smoad5456@gmail.com">smoad5456@gmail.com</a></div>
+        <div><a href="https://muad-portfolio.vercel.app" target="_blank" rel="noopener">muad-portfolio.vercel.app</a></div>
+        <div><a href="https://github.com/Muaddd1" target="_blank" rel="noopener">github.com/Muaddd1</a></div>
+        <div><a href="https://www.linkedin.com/in/moad-sehli-553b46283/" target="_blank" rel="noopener">linkedin.com/in/moad-sehli</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p class="summary">
+        Frontend developer with 3+ years of experience building production web interfaces.
+        Shipped 40+ websites as part of a development team for private clients (2022–2025),
+        working directly within internal teams from design handoff through deployment.
+        Now working independently — open to freelance projects and full-time roles.
+        Comfortable across the full frontend stack: React, TypeScript, Next.js, and modern CSS,
+        with backend exposure through PHP and Laravel.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Frontend Developer — Independent</span>
+          <span class="entry-period">2025 — Present</span>
+        </div>
+        <div class="entry-sub">Remote — Morocco</div>
+        <ul class="bullets">
+          <li>Went independent after building production frontend experience within a development team</li>
+          <li>Building and shipping frontend products end-to-end — from UI implementation to deployment</li>
+          <li>Open to both freelance projects and full-time roles</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Frontend Developer — Private Clients (NDA)</span>
+          <span class="entry-period">2022 — 2025</span>
+        </div>
+        <div class="entry-sub">Morocco</div>
+        <ul class="bullets">
+          <li>Contributed frontend development to 40+ production websites as part of a development team</li>
+          <li>Worked directly inside internal teams — turning requirements and design handoffs into shipped features</li>
+          <li>Focused on clean, maintainable component architecture built to survive ongoing iteration</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Web Development — Self-Taught</span>
+          <span class="entry-period">2020 — 2022</span>
+        </div>
+        <div class="entry-sub">Morocco</div>
+        <ul class="bullets">
+          <li>Learned modern frontend development through hands-on project building</li>
+          <li>Completed 20+ personal projects across React, JavaScript, and CSS</li>
+          <li>Transitioned from static sites to full interactive web applications</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Personal Projects</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Freelancer CRM</span>
+        </div>
+        <ul class="bullets">
+          <li>Full client management app — clients, projects, invoices, proposals, contracts, and health scoring, all fully wired with localStorage persistence</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Next.js 16</span><span class="tag">Tailwind CSS v4</span><span class="tag">Radix UI</span><span class="tag">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Novara — AI SaaS Platform Template</span>
+        </div>
+        <ul class="bullets">
+          <li>AI workspace template with chat, agents, analytics, team management, and full auth flow</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Next.js 14</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Framer Motion</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">TechZone Shop</span>
+        </div>
+        <ul class="bullets">
+          <li>Immersive 3D e-commerce storefront with real-time product visualization</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">Three.js</span><span class="tag">GSAP</span><span class="tag">Tailwind CSS</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="grid-2">
+        <div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Frontend</div>
+            <div class="skill-cat-items">React, JavaScript, TypeScript, Next.js, HTML5, CSS3, Tailwind CSS, WordPress</div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Backend</div>
+            <div class="skill-cat-items">PHP, Laravel, MySQL</div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Tools</div>
+            <div class="skill-cat-items">Git, GitHub, Figma, Vite</div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Languages</div>
+            <div class="lang-row"><span class="lang-name">Arabic</span><span class="lang-level">Native</span></div>
+            <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Intermediate</span></div>
+            <div class="lang-row"><span class="lang-name">French</span><span class="lang-level">Intermediate</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Full portfolio, live demos, and case studies at muad-portfolio.vercel.app
+    </footer>
+  </div>
+</body>
+</html>
