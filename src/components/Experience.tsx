@@ -57,16 +57,16 @@ export default function Experience() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
               className="text-mono mb-5"
             >
               05 — Experience
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold leading-tight text-white"
             >
               Where I&apos;ve
@@ -88,10 +88,10 @@ export default function Experience() {
             {experiences.map((exp, i) => (
               <motion.div
                 key={exp.company}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -12 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
+                viewport={{ once: true, margin: '0px 0px 120px 0px' }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
                 className="relative pl-14 pb-16 last:pb-0"
               >
                 {/* Dot */}

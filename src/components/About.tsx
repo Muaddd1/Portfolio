@@ -41,8 +41,8 @@ export default function About() {
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+          transition={{ duration: 0.4 }}
           className="text-mono mb-20"
         >
           01 — About
@@ -53,10 +53,10 @@ export default function About() {
 
           {/* Left — big statement */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6"
           >
             <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-display font-bold leading-tight text-white mb-8">
@@ -104,10 +104,10 @@ export default function About() {
 
           {/* Right — highlights + visual */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
             className="lg:col-span-6 lg:pt-8"
           >
             {/* Highlight cards */}
@@ -115,10 +115,10 @@ export default function About() {
               {highlights.map((h, i) => (
                 <motion.div
                   key={h.label}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 + i * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+                  transition={{ delay: 0.05 + i * 0.04, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                   className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-6 hover:border-cyan/15 hover:bg-white/[0.03] transition-all duration-300"
                 >
                   <p className="text-[10px] font-mono text-cyan/50 uppercase tracking-widest mb-3">
@@ -133,10 +133,10 @@ export default function About() {
             {/* Code snippet visual — subtle pointer-driven tilt */}
             <motion.div
               ref={tilt.ref}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ delay: 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               onMouseMove={tilt.handlers.onMouseMove}
               onMouseEnter={tilt.handlers.onMouseEnter}
               onMouseLeave={tilt.handlers.onMouseLeave}
@@ -198,10 +198,10 @@ export default function About() {
               href="https://github.com/Muaddd1"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ delay: 0.28, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="block mt-6 bg-white/[0.02] border border-white/[0.06] rounded-lg p-6 hover:border-cyan/15 hover:bg-white/[0.03] transition-all duration-300 group"
             >
               <div className="flex items-center justify-between mb-4">

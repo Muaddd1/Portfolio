@@ -36,16 +36,16 @@ export default function Skills() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
               className="text-mono mb-5"
             >
               04 — Stack
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold leading-tight text-white"
             >
               Tools &amp;
@@ -60,10 +60,10 @@ export default function Skills() {
           {skills.map((category, ci) => (
             <motion.div
               key={category.label}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: ci * 0.1 }}
+              viewport={{ once: true, margin: '0px 0px 120px 0px' }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: ci * 0.05 }}
               className="flex flex-col gap-6"
             >
               {/* Category label */}

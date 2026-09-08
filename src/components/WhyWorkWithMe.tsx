@@ -53,16 +53,16 @@ export default function WhyWorkWithMe() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
               className="text-mono mb-5"
             >
               06 — Why Work With Me
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold leading-tight text-white"
             >
               What Sets
@@ -73,8 +73,8 @@ export default function WhyWorkWithMe() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+            transition={{ delay: 0.1, duration: 0.5 }}
             className="text-[14px] text-white/30 max-w-sm leading-relaxed"
           >
             Skills are learnable. The way I work — clear, precise, and focused on your outcome — is what actually matters.
@@ -88,10 +88,10 @@ export default function WhyWorkWithMe() {
             return (
               <motion.div
                 key={reason.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
+                viewport={{ once: true, margin: '0px 0px 120px 0px' }}
+                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1], delay: i * 0.04 }}
                 className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-8 hover:border-cyan/12 hover:bg-white/[0.025] transition-all duration-300 group"
               >
                 <div className="w-10 h-10 rounded-lg bg-cyan/5 border border-cyan/10 flex items-center justify-center mb-6 group-hover:bg-cyan/10 group-hover:border-cyan/20 transition-all duration-300">

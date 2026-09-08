@@ -34,16 +34,16 @@ export default function Services() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
               className="text-mono mb-5"
             >
               03 — Services
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold leading-tight text-white"
             >
               What I
@@ -54,8 +54,8 @@ export default function Services() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+            transition={{ delay: 0.1, duration: 0.5 }}
             className="text-[14px] text-white/30 max-w-sm leading-relaxed"
           >
             End-to-end web solutions — from pixel-perfect interfaces to fully functional web applications.
@@ -69,10 +69,10 @@ export default function Services() {
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
+                viewport={{ once: true, margin: '0px 0px 120px 0px' }}
+                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1], delay: i * 0.04 }}
                 className="bg-void p-10 lg:p-12 group hover:bg-white/[0.02] transition-colors duration-500"
               >
                 <div className="flex flex-col h-full">

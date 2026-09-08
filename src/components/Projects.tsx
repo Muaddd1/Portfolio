@@ -17,10 +17,10 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
+      viewport={{ once: true, margin: '0px 0px 150px 0px' }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.06 }}
       className="group relative"
     >
       {/* Card container — subtle pointer-driven tilt */}
@@ -234,16 +234,16 @@ export default function Projects() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
               className="text-mono mb-5"
             >
               02 — Selected Work
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-bold leading-tight text-white"
             >
               Things I&apos;ve
@@ -254,8 +254,8 @@ export default function Projects() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+            transition={{ delay: 0.1, duration: 0.5 }}
             className="text-[14px] text-white/30 max-w-xs leading-relaxed"
           >
             A focused selection of projects — each one a deliberate exercise in craft.

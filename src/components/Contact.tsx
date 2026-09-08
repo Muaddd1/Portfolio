@@ -52,16 +52,16 @@ export default function Contact() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
               className="text-mono mb-6"
             >
               07 — Contact
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(2.5rem,5vw,3.8rem)] font-display font-bold leading-tight text-white mb-6"
             >
               Let&apos;s build
@@ -71,10 +71,10 @@ export default function Contact() {
               great.
             </motion.h2>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15, duration: 0.8 }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ delay: 0.08, duration: 0.5 }}
               className="text-[14px] text-white/30 leading-relaxed mb-12"
             >
               Open to full-time roles and freelance projects — have an opportunity
@@ -84,10 +84,10 @@ export default function Contact() {
 
             {/* Direct contact links */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25, duration: 0.8 }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ delay: 0.14, duration: 0.5 }}
               className="flex flex-col gap-5 mb-12"
             >
               <a
@@ -127,8 +127,8 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.35, duration: 0.6 }}
+              viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+              transition={{ delay: 0.2, duration: 0.4 }}
               className="inline-flex items-center gap-3 bg-emerald-500/5 border border-emerald-500/10 rounded-lg px-5 py-3"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -140,10 +140,10 @@ export default function Contact() {
 
           {/* Right — form */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            viewport={{ once: true, margin: '0px 0px 100px 0px' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
             className="lg:col-span-7"
           >
             {sent ? (
