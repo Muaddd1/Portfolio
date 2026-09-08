@@ -13,14 +13,14 @@ const highlights = [
     detail: 'Building production apps',
   },
   {
-    label: 'Projects',
-    value: '50+ Delivered',
-    detail: 'Web apps, landing pages, SaaS',
+    label: 'Websites',
+    value: '40+ Shipped',
+    detail: 'As part of a dev team, 2022–2025',
   },
   {
-    label: 'Clients',
-    value: '30+ Worldwide',
-    detail: 'From startups to agencies',
+    label: 'Status',
+    value: 'Independent',
+    detail: 'Freelance & full-time, since 2025',
   },
 ];
 

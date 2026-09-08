@@ -2,17 +2,16 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
-    company: 'Freelance',
+    company: 'Independent',
     role: 'Frontend Developer',
-    period: '2023 — Present',
+    period: '2025 — Present',
     location: 'Remote — Morocco',
     highlights: [
-      'Built 50+ client projects across SaaS, e-commerce, and portfolio sites',
-      'Delivered end-to-end web applications using React, Next.js, TypeScript',
-      'Specialised in pixel-perfect UI implementation and performance optimisation',
-      'Served 30+ clients ranging from startups to established agencies',
+      'Went independent after building production frontend experience within a development team',
+      'Building and shipping frontend products end-to-end — from UI implementation to deployment',
+      'Open to both freelance projects and full-time roles',
     ],
-    tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'WordPress'],
+    tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
   },
   {
     company: 'Private Clients (NDA)',
@@ -20,7 +19,7 @@ const experiences = [
     period: '2022 — 2025',
     location: 'Morocco',
     highlights: [
-      'Built and maintained production frontend interfaces for private company products',
+      'Contributed frontend development to 40+ production websites as part of a development team',
       'Worked directly inside internal teams — turning requirements and design handoffs into shipped features',
       'Focused on clean, maintainable component architecture built to survive ongoing iteration',
     ],
