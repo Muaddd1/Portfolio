@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Layers } from 'lucide-react';
 import { projects } from '../data/projects';
+import { useTilt } from '../hooks/useTilt';
 
 const GitHubIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -10,6 +11,7 @@ const GitHubIcon = () => (
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const isPortfolio = project.id === 1;
+  const tilt = useTilt({ max: 4, scale: 1.01 });
 
   return (
     <motion.article
@@ -19,8 +21,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
       className="group relative"
     >
-      {/* Card container */}
-      <div className="relative overflow-hidden rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-cyan/15 transition-all duration-500">
+      {/* Card container — subtle pointer-driven tilt */}
+      <motion.div
+        ref={tilt.ref}
+        style={tilt.style}
+        onMouseMove={tilt.handlers.onMouseMove}
+        onMouseEnter={tilt.handlers.onMouseEnter}
+        onMouseLeave={tilt.handlers.onMouseLeave}
+        className="relative overflow-hidden rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-cyan/15 transition-colors duration-500"
+      >
 
         {/* Image */}
         <div className="relative aspect-[16/9] overflow-hidden">
@@ -144,7 +153,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.article>
   );
 }

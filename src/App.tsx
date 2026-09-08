@@ -10,10 +10,12 @@ import WhyWorkWithMe from './components/WhyWorkWithMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CommandPalette from './components/CommandPalette';
+import Cursor from './components/Cursor';
 
 export default function App() {
   return (
     <div>
+      <Cursor />
       <Navbar />
       <main>
         <Hero />

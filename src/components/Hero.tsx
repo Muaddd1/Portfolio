@@ -1,9 +1,14 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 
 const WORDS = ['Crafting', 'Digital', 'Experiences'];
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const orbY1 = useTransform(scrollY, [0, 900], [0, 140]);
+  const orbY2 = useTransform(scrollY, [0, 900], [0, -90]);
+  const heroOpacity = useTransform(scrollY, [0, 500], [1, 0.35]);
+
   const handleScrollToWork = () => {
     document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -29,20 +34,23 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Ambient glow orbs */}
-      <div
+      {/* Ambient glow orbs — drift with scroll for depth */}
+      <motion.div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse, rgba(0,212,255,0.05) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse, rgba(0,212,255,0.05) 0%, transparent 70%)', y: orbY1 }}
         aria-hidden="true"
       />
-      <div
+      <motion.div
         className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(0,212,255,0.03) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(0,212,255,0.03) 0%, transparent 70%)', y: orbY2 }}
         aria-hidden="true"
       />
 
-      {/* Main content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end pb-20 pt-32">
+      {/* Main content — recedes gently as you scroll past */}
+      <motion.div
+        style={{ opacity: heroOpacity }}
+        className="relative z-10 flex-1 flex flex-col justify-end pb-20 pt-32"
+      >
         <div className="container-wide">
           {/* Mono label */}
           <motion.p
@@ -136,7 +144,7 @@ export default function Hero() {
             </span>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div

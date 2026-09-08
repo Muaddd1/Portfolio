@@ -135,6 +135,14 @@ body {
   border-radius: 2px;
 }
 
+/* ── Custom cursor ── */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

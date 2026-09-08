@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTilt } from '../hooks/useTilt';
 
 const highlights = [
   {
@@ -24,6 +25,8 @@ const highlights = [
 ];
 
 export default function About() {
+  const tilt = useTilt({ max: 6, scale: 1.015 });
+
   return (
     <section
       id="about"
@@ -127,12 +130,17 @@ export default function About() {
               ))}
             </div>
 
-            {/* Code snippet visual */}
+            {/* Code snippet visual — subtle pointer-driven tilt */}
             <motion.div
+              ref={tilt.ref}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              onMouseMove={tilt.handlers.onMouseMove}
+              onMouseEnter={tilt.handlers.onMouseEnter}
+              onMouseLeave={tilt.handlers.onMouseLeave}
+              style={tilt.style}
               className="bg-[#0d1117] border border-white/[0.06] rounded-lg overflow-hidden"
             >
               {/* Window dots */}
