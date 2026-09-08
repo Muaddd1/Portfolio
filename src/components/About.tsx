@@ -34,7 +34,6 @@ export default function About() {
       aria-label="About"
     >
       <div className="absolute inset-0 bg-void" aria-hidden="true" />
-      <div className="absolute inset-0 grid-overlay" aria-hidden="true" />
 
       <div className="container-wide relative z-10">
         {/* Section index */}
@@ -148,9 +147,9 @@ export default function About() {
                 <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#28ca41]" />
-                <span className="ml-3 text-[11px] font-mono text-white/20">about.tsx</span>
+                <span className="ml-3 text-[11px] font-code text-white/20">about.tsx</span>
               </div>
-              <div className="p-6 font-mono text-[13px] leading-7 overflow-x-auto">
+              <div className="p-6 font-code text-[13px] leading-7 overflow-x-auto">
                 <div>
                   <span className="text-[#7ee787]">const</span>
                   <span className="text-white/70"> developer </span>
@@ -213,7 +212,7 @@ export default function About() {
                 </span>
               </div>
               <img
-                src="https://ghchart.rshah.org/00d4ff/Muaddd1"
+                src="https://ghchart.rshah.org/d4a24c/Muaddd1"
                 alt="Mouad Sehli's GitHub contribution graph"
                 className="w-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                 loading="lazy"

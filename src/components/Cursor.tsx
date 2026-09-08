@@ -66,9 +66,9 @@ export default function Cursor() {
           translateY: '-50%',
           width: hovering ? 52 : 28,
           height: hovering ? 52 : 28,
-          borderColor: '#00d4ff',
+          borderColor: '#d4a24c',
           borderWidth: hovering ? 1.5 : 1,
-          backgroundColor: hovering ? 'rgba(0,212,255,0.08)' : 'transparent',
+          backgroundColor: hovering ? 'rgba(212,162,76,0.10)' : 'transparent',
           scale: pressed ? 0.85 : 1,
           transition: 'width 0.25s cubic-bezier(0.16,1,0.3,1), height 0.25s cubic-bezier(0.16,1,0.3,1), background-color 0.25s ease, scale 0.15s ease',
         }}

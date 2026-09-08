@@ -173,7 +173,7 @@ export default function CommandPalette() {
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="fixed top-[20%] left-1/2 -translate-x-1/2 z-50 w-full max-w-lg mx-4"
           >
-            <div className="bg-[#0d1117] border border-white/[0.08] rounded-xl overflow-hidden shadow-2xl shadow-black/60">
+            <div className="bg-[#1c1812] border border-white/[0.08] rounded-xl overflow-hidden shadow-2xl shadow-black/60">
               {/* Search input */}
               <div className="flex items-center gap-3 px-5 py-4 border-b border-white/[0.06]">
                 <Search size={16} className="text-white/30 flex-shrink-0" />

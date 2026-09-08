@@ -5,8 +5,6 @@ const WORDS = ['Crafting', 'Digital', 'Experiences'];
 
 export default function Hero() {
   const { scrollY } = useScroll();
-  const orbY1 = useTransform(scrollY, [0, 900], [0, 140]);
-  const orbY2 = useTransform(scrollY, [0, 900], [0, -90]);
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0.35]);
 
   const handleScrollToWork = () => {
@@ -25,24 +23,9 @@ export default function Hero() {
       {/* Void background */}
       <div className="absolute inset-0 bg-void" aria-hidden="true" />
 
-      {/* Subtle grid */}
-      <div className="absolute inset-0 grid-overlay opacity-100" aria-hidden="true" />
-
       {/* Horizon glow */}
       <div
         className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/15 to-transparent"
-        aria-hidden="true"
-      />
-
-      {/* Ambient glow orbs — drift with scroll for depth */}
-      <motion.div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse, rgba(0,212,255,0.05) 0%, transparent 70%)', y: orbY1 }}
-        aria-hidden="true"
-      />
-      <motion.div
-        className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(0,212,255,0.03) 0%, transparent 70%)', y: orbY2 }}
         aria-hidden="true"
       />
 

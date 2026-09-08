@@ -225,7 +225,6 @@ export default function Projects() {
       aria-label="Selected Work"
     >
       <div className="absolute inset-0 bg-void" aria-hidden="true" />
-      <div className="absolute inset-0 grid-overlay" aria-hidden="true" />
 
       <div className="container-wide relative z-10">
         {/* Header */}

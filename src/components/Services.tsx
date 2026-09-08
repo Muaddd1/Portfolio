@@ -19,7 +19,6 @@ export default function Services() {
       aria-label="Services"
     >
       <div className="absolute inset-0 bg-void" aria-hidden="true" />
-      <div className="absolute inset-0 grid-overlay" aria-hidden="true" />
 
       {/* Side accent line */}
       <div

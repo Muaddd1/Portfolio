@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Colors ── */
-  --color-void: #07090f;
-  --color-abyss: #0a0d18;
-  --color-deep: #0c1020;
-  --color-nebula: #0f1525;
-  --color-border: rgba(255, 255, 255, 0.05);
-  --color-border-bright: rgba(255, 255, 255, 0.10);
-  --color-cyan: #00d4ff;
-  --color-cyan-dim: rgba(0, 212, 255, 0.10);
-  --color-cyan-glow: rgba(0, 212, 255, 0.20);
-  --color-white: #f0f0f5;
-  --color-muted: #5a5a72;
-  --color-dim: #2e2e40;
-  --color-surface: rgba(255, 255, 255, 0.02);
-  --color-surface-hover: rgba(255, 255, 255, 0.04);
+  /* ── Colors — warm dark, flat accent, no neon ── */
+  --color-void: #14120f;
+  --color-abyss: #1a1712;
+  --color-deep: #1d1a15;
+  --color-nebula: #201c17;
+  --color-border: rgba(245, 238, 225, 0.06);
+  --color-border-bright: rgba(245, 238, 225, 0.12);
+  --color-cyan: #d4a24c;
+  --color-cyan-dim: rgba(212, 162, 76, 0.10);
+  --color-cyan-glow: rgba(212, 162, 76, 0.18);
+  --color-white: #f2ede3;
+  --color-muted: #8a8070;
+  --color-dim: #332e26;
+  --color-surface: rgba(245, 238, 225, 0.025);
+  --color-surface-hover: rgba(245, 238, 225, 0.045);
 
   /* ── Fonts ── */
   --font-sans: "Inter", system-ui, sans-serif;
-  --font-display: "Syne", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "Inter", system-ui, sans-serif;
+  --font-code: "JetBrains Mono", monospace;
 
   /* ── Animations ── */
   --animate-slow-fade: slow-fade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -61,22 +62,20 @@ body {
 
 /* ── Selection ── */
 ::selection {
-  background: rgba(0, 212, 255, 0.2);
+  background: rgba(212, 162, 76, 0.25);
   color: #fff;
 }
 
 /* ── Typography ── */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-cyan), #67e8f9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-cyan);
 }
 
 .text-mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 11px;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-muted);
 }
@@ -101,25 +100,17 @@ body {
   .container-narrow { padding: 0 20px; }
 }
 
-/* ── Grid overlay — very subtle ── */
-.grid-overlay {
-  background-image:
-    linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
 /* ── Glass ── */
 .glass {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(245, 238, 225, 0.025);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--color-border);
 }
 
 .glass-hover:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(0, 212, 255, 0.15);
+  background: rgba(245, 238, 225, 0.045);
+  border-color: rgba(212, 162, 76, 0.15);
 }
 
 /* ── Scrollbar ── */
@@ -159,12 +150,11 @@ body {
   gap: 10px;
   padding: 14px 28px;
   background: var(--color-cyan);
-  color: #07090f;
-  font-family: var(--font-mono);
-  font-size: 12px;
+  color: #191510;
+  font-family: var(--font-sans);
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -177,15 +167,15 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
   opacity: 0;
   transition: opacity 0.3s;
 }
 
 .btn-primary:hover {
-  background: #33ddff;
+  background: #e2b563;
   transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .btn-primary:hover::before { opacity: 1; }
@@ -198,12 +188,11 @@ body {
   padding: 13px 27px;
   background: transparent;
   color: var(--color-white);
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(245, 238, 225, 0.15);
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -225,7 +214,7 @@ a[target="_blank"]::after {
   width: 10px;
   height: 10px;
   margin-left: 4px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a5a72' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a8070' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0;

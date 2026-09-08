@@ -27,7 +27,6 @@ export default function Skills() {
       aria-label="Skills"
     >
       <div className="absolute inset-0 bg-void" aria-hidden="true" />
-      <div className="absolute inset-0 grid-overlay" aria-hidden="true" />
 
       <div className="container-wide relative z-10">
         {/* Header */}
@@ -86,7 +85,7 @@ export default function Skills() {
                       {/* Proof tooltip */}
                       {proof && (
                         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover/skill:opacity-100 transition-all duration-200 pointer-events-none group-hover/skill:pointer-events-auto z-10 whitespace-nowrap">
-                          <div className="bg-[#0d1117] border border-white/[0.08] rounded-lg px-4 py-3 shadow-2xl shadow-black/50">
+                          <div className="bg-[#1c1812] border border-white/[0.08] rounded-lg px-4 py-3 shadow-2xl shadow-black/50">
                             <p className="text-[10px] font-mono text-cyan/60 uppercase tracking-widest mb-2">
                               Used in
                             </p>
@@ -102,7 +101,7 @@ export default function Skills() {
                             </div>
                           </div>
                           {/* Arrow */}
-                          <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-[#0d1117] border-right border-bottom border-white/[0.08] rotate-45 -mt-1" />
+                          <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-[#1c1812] border-right border-bottom border-white/[0.08] rotate-45 -mt-1" />
                         </div>
                       )}
                     </div>

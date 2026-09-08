@@ -39,7 +39,6 @@ export default function Contact() {
       aria-label="Contact"
     >
       <div className="absolute inset-0 bg-void" aria-hidden="true" />
-      <div className="absolute inset-0 grid-overlay" aria-hidden="true" />
 
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
@@ -236,17 +235,17 @@ export default function Contact() {
                         name="projectType"
                         className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white/50 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300 appearance-none cursor-pointer"
                       >
-                        <option value="" className="bg-[#0d1117]">Select type...</option>
-                        <option value="Full-Time Position" className="bg-[#0d1117]">Full-Time Position</option>
-                        <option value="Website" className="bg-[#0d1117]">Website</option>
-                        <option value="Web Application" className="bg-[#0d1117]">Web Application</option>
-                        <option value="Landing Page" className="bg-[#0d1117]">Landing Page</option>
-                        <option value="E-commerce" className="bg-[#0d1117]">E-commerce</option>
-                        <option value="SaaS Product" className="bg-[#0d1117]">SaaS Product</option>
-                        <option value="Frontend Only" className="bg-[#0d1117]">Frontend Only</option>
-                        <option value="Full-Stack App" className="bg-[#0d1117]">Full-Stack App</option>
-                        <option value="Website Redesign" className="bg-[#0d1117]">Website Redesign</option>
-                        <option value="Other" className="bg-[#0d1117]">Other</option>
+                        <option value="" className="bg-[#1c1812]">Select type...</option>
+                        <option value="Full-Time Position" className="bg-[#1c1812]">Full-Time Position</option>
+                        <option value="Website" className="bg-[#1c1812]">Website</option>
+                        <option value="Web Application" className="bg-[#1c1812]">Web Application</option>
+                        <option value="Landing Page" className="bg-[#1c1812]">Landing Page</option>
+                        <option value="E-commerce" className="bg-[#1c1812]">E-commerce</option>
+                        <option value="SaaS Product" className="bg-[#1c1812]">SaaS Product</option>
+                        <option value="Frontend Only" className="bg-[#1c1812]">Frontend Only</option>
+                        <option value="Full-Stack App" className="bg-[#1c1812]">Full-Stack App</option>
+                        <option value="Website Redesign" className="bg-[#1c1812]">Website Redesign</option>
+                        <option value="Other" className="bg-[#1c1812]">Other</option>
                       </select>
                     </div>
                     <div className="flex flex-col gap-2">
@@ -258,15 +257,15 @@ export default function Contact() {
                         name="budget"
                         className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white/50 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300 appearance-none cursor-pointer"
                       >
-                        <option value="" className="bg-[#0d1117]">Select range...</option>
-                        <option value="N/A — Full-Time Role" className="bg-[#0d1117]">N/A — Full-Time Role</option>
-                        <option value="Under $500" className="bg-[#0d1117]">Under $500</option>
-                        <option value="$500 – $1,000" className="bg-[#0d1117]">$500 – $1,000</option>
-                        <option value="$1,000 – $2,500" className="bg-[#0d1117]">$1,000 – $2,500</option>
-                        <option value="$2,500 – $5,000" className="bg-[#0d1117]">$2,500 – $5,000</option>
-                        <option value="$5,000 – $10,000" className="bg-[#0d1117]">$5,000 – $10,000</option>
-                        <option value="$10,000+" className="bg-[#0d1117]">$10,000+</option>
-                        <option value="Not sure yet" className="bg-[#0d1117]">Not sure yet</option>
+                        <option value="" className="bg-[#1c1812]">Select range...</option>
+                        <option value="N/A — Full-Time Role" className="bg-[#1c1812]">N/A — Full-Time Role</option>
+                        <option value="Under $500" className="bg-[#1c1812]">Under $500</option>
+                        <option value="$500 – $1,000" className="bg-[#1c1812]">$500 – $1,000</option>
+                        <option value="$1,000 – $2,500" className="bg-[#1c1812]">$1,000 – $2,500</option>
+                        <option value="$2,500 – $5,000" className="bg-[#1c1812]">$2,500 – $5,000</option>
+                        <option value="$5,000 – $10,000" className="bg-[#1c1812]">$5,000 – $10,000</option>
+                        <option value="$10,000+" className="bg-[#1c1812]">$10,000+</option>
+                        <option value="Not sure yet" className="bg-[#1c1812]">Not sure yet</option>
                       </select>
                     </div>
                   </div>
