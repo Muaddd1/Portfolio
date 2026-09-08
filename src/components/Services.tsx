@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import { Code2, Layers, Zap, Smartphone, Globe, TrendingUp } from 'lucide-react';
+import { Code2, Layers, Zap, Eye, Globe, MessageSquare } from 'lucide-react';
 import { personal } from '../data/personal';
 
 const iconMap: Record<string, React.ElementType> = {
   Code2,
   Layers,
   Zap,
-  Smartphone,
+  Eye,
   Globe,
-  TrendingUp,
+  MessageSquare,
 };
 
 export default function Services() {

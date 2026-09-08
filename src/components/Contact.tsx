@@ -55,7 +55,7 @@ export default function Contact() {
               viewport={{ once: true, margin: '0px 0px 100px 0px' }}
               className="text-mono mb-6"
             >
-              07 — Contact
+              06 — Contact
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}

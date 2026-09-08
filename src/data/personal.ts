@@ -30,25 +30,19 @@ export const personal = {
         icon: 'Code2',
         title: 'Frontend Development',
         description:
-          'Modern, responsive websites and web applications built with React, clean code, and performance-first architecture.',
+          'Modern, responsive websites and web applications built with React, TypeScript, and performance-first architecture.',
       },
       {
-        icon: 'Layers',
-        title: 'UI Implementation',
+        icon: 'Eye',
+        title: 'Pixel-Perfect Execution',
         description:
-          'Turning Figma designs into polished, pixel-perfect interfaces with meticulous attention to detail.',
+          'Figma to production, exactly as designed — the difference between good and great lives in the details.',
       },
       {
         icon: 'Zap',
-        title: 'Performance & SEO',
+        title: 'Performance First',
         description:
-          'Fast-loading, optimized experiences with clean code, Core Web Vitals focus, and SEO best practices.',
-      },
-      {
-        icon: 'Smartphone',
-        title: 'Responsive Design',
-        description:
-          'Interfaces that work flawlessly across desktop, tablet, and mobile — every breakpoint considered.',
+          'Sub-second loads, smooth 60fps interactions, zero layout shift. Speed is a design constraint, not an afterthought.',
       },
       {
         icon: 'Globe',
@@ -57,10 +51,16 @@ export const personal = {
           'End-to-end web applications with Next.js, TypeScript, PostgreSQL, and Prisma — from database design to deployment.',
       },
       {
-        icon: 'TrendingUp',
-        title: 'SaaS Product Development',
+        icon: 'Layers',
+        title: 'Clean, Maintainable Code',
         description:
-          'Building and launching subscription-based web products — auth, payments, dashboards, and scalable architecture from day one.',
+          'No shortcuts, no hacky workarounds. Component architecture built to scale and hand off cleanly.',
+      },
+      {
+        icon: 'MessageSquare',
+        title: 'Clear Communication',
+        description:
+          'Regular updates, honest timelines, no surprises — you always know exactly where things stand.',
       },
     ],
   },
