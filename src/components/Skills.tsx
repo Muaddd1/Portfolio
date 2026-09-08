@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { skills } from '../data/skills';
-import { projects } from '../data/projects';
 
 // Map skills to projects where they were used
 const skillProof: Record<string, string[]> = {

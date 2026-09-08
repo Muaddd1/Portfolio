@@ -55,7 +55,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               <ExternalLink size={12} />
               View Demo
             </a>
-            {project.github && (
+            {isPortfolio && project.github && (
               <a
                 href={project.github}
                 target="_blank"
@@ -125,7 +125,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               <ExternalLink size={12} />
               View Demo
             </a>
-            {project.github && (
+            {isPortfolio && project.github && (
               <a
                 href={project.github}
                 target="_blank"
