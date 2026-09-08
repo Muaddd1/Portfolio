@@ -3,6 +3,7 @@ import nexaaiImg from '../assets/screenshots/nexaai.jpg';
 import techzoneImg from '../assets/screenshots/techzone.jpg';
 import freelancerosImg from '../assets/screenshots/freelanceros.jpg';
 import portfolioImg from '../assets/screenshots/portfolio.jpg';
+import clipflowImg from '../assets/screenshots/clipflow.jpg';
 
 export interface CaseStudy {
   problem: string;
@@ -24,6 +25,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 7,
+    title: 'ClipFlow',
+    description:
+      'The operating system for your content business. A command center for creators — idea vault with viral scoring, script studio, content calendar, sponsor CRM, analytics, and a repurpose workspace to turn one video into many formats. Built with Next.js 16, Tailwind CSS v4, and Radix UI.',
+    tags: ['Next.js 16', 'Tailwind CSS v4', 'Radix UI', 'TypeScript', 'localStorage'],
+    image: clipflowImg,
+    demo: 'https://clipflow-sepia.vercel.app',
+    demoUrl: 'https://clipflow-sepia.vercel.app',
+    github: 'https://github.com/Muaddd1/clipflow',
+    year: '2026',
+  },
   {
     id: 6,
     title: 'Freelancer CRM',
