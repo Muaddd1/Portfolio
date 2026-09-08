@@ -132,7 +132,7 @@ export default function Hero() {
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-[11px] font-mono text-white/30 tracking-[0.15em] uppercase">
-              Available for freelance projects
+              Open to full-time roles & freelance projects
             </span>
           </motion.div>
         </div>

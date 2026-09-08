@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, ArrowRight, CheckCircle, Github, Linkedin } from 'lucide-react';
+import { Mail, CheckCircle } from 'lucide-react';
 import { personal } from '../data/personal';
 
 const GitHubIcon = () => (
@@ -15,68 +15,22 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-const projectTypes = [
-  'Website', 'Web Application', 'Landing Page', 'E-commerce', 'SaaS Product',
-  'Frontend Only', 'Full-Stack App', 'Website Redesign', 'Other',
-];
-
-const budgetRanges = [
-  'Under $500', '$500 – $1,000', '$1,000 – $2,500', '$2,500 – $5,000',
-  '$5,000 – $10,000', '$10,000+', 'Not sure yet',
-];
-
-interface FormState {
-  name: string;
-  email: string;
-  company: string;
-  projectType: string;
-  budget: string;
-  message: string;
-}
-
 export default function Contact() {
-  const [form, setForm] = useState<FormState>({
-    name: '', email: '', company: '', projectType: '', budget: '', message: '',
-  });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
-  const [errors, setErrors] = useState<Partial<FormState>>({});
+  const [sent, setSent] = useState(false);
 
-  const validate = () => {
-    const newErrors: Partial<FormState> = {};
-    if (!form.name.trim()) newErrors.name = 'Name is required';
-    if (!form.email.trim()) newErrors.email = 'Email is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = 'Enter a valid email';
-    if (!form.message.trim()) newErrors.message = 'Message is required';
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleChange = (field: keyof FormState, value: string) => {
-    setForm((f) => ({ ...f, [field]: value }));
-    if (errors[field]) setErrors((e) => ({ ...e, [field]: undefined }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-    setStatus('sending');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || 'Failed to send');
-      }
-      setStatus('sent');
-      setForm({ name: '', email: '', company: '', projectType: '', budget: '', message: '' });
-    } catch {
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 3000);
+  // Check if redirected back after FormSubmit submission
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      setSent(true);
+      // Clean URL without reload
+      window.history.replaceState({}, '', window.location.pathname + '#contact');
+      // Scroll to contact
+      setTimeout(() => {
+        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
-  };
+  }, []);
 
   return (
     <section
@@ -123,8 +77,9 @@ export default function Contact() {
               transition={{ delay: 0.15, duration: 0.8 }}
               className="text-[14px] text-white/30 leading-relaxed mb-12"
             >
-              Have a project in mind or just want to say hello —
-              my inbox is always open. Typical response time: under 24 hours.
+              Open to full-time roles and freelance projects — have an opportunity
+              in mind or just want to say hello, my inbox is always open.
+              Typical response time: under 24 hours.
             </motion.p>
 
             {/* Direct contact links */}
@@ -136,13 +91,13 @@ export default function Contact() {
               className="flex flex-col gap-5 mb-12"
             >
               <a
-                href={`mailto:${personal.contact.email}`}
+                href="mailto:smoad5456@gmail.com"
                 className="flex items-center gap-4 text-[14px] text-white/50 hover:text-cyan transition-colors duration-300 group"
               >
                 <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center group-hover:border-cyan/20 group-hover:bg-cyan/5 transition-all duration-300">
                   <Mail size={15} className="text-white/30 group-hover:text-cyan transition-colors" />
                 </div>
-                {personal.contact.email}
+                smoad5456@gmail.com
               </a>
               <a
                 href={personal.contact.github}
@@ -178,7 +133,7 @@ export default function Contact() {
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-[12px] font-mono text-emerald-400/70 uppercase tracking-wider">
-                Available for projects
+                Open to full-time roles & freelance work
               </span>
             </motion.div>
           </div>
@@ -191,7 +146,7 @@ export default function Contact() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="lg:col-span-7"
           >
-            {status === 'sent' ? (
+            {sent ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -205,140 +160,144 @@ export default function Contact() {
                   Thanks for reaching out. I&apos;ll get back to you within 24 hours.
                 </p>
                 <button
-                  onClick={() => setStatus('idle')}
+                  onClick={() => setSent(false)}
                   className="text-[12px] font-mono text-cyan/60 hover:text-cyan transition-colors"
                 >
                   Send another message
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
-                {/* Name + Email */}
-                <div className="grid sm:grid-cols-2 gap-5">
+              <form
+                action="https://formsubmit.co/raidteeech@gmail.com"
+                method="POST"
+              >
+                {/* FormSubmit config */}
+                <input type="hidden" name="_subject" value="New Contact from Portfolio" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value="https://muad-portfolio.vercel.app/#contact?sent=1" />
+
+                <div className="flex flex-col gap-5">
+                  {/* Name + Email */}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="name" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
+                        Name <span className="text-red-400/50">*</span>
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        required
+                        autoComplete="name"
+                        placeholder="John Smith"
+                        className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white placeholder:text-white/20 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="email" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
+                        Email <span className="text-red-400/50">*</span>
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        required
+                        autoComplete="email"
+                        placeholder="john@company.com"
+                        className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white placeholder:text-white/20 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Company */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
-                      Name <span className="text-red-400/50">*</span>
+                    <label htmlFor="company" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
+                      Company
                     </label>
                     <input
-                      id="name"
+                      id="company"
                       type="text"
-                      required
-                      autoComplete="name"
-                      value={form.name}
-                      onChange={(e) => handleChange('name', e.target.value)}
-                      placeholder="John Smith"
-                      className={`w-full bg-white/[0.02] border rounded-sm px-5 py-4 text-[14px] text-white placeholder:text-white/20 focus:outline-none transition-all duration-300 ${
-                        errors.name ? 'border-red-500/40 bg-red-500/5' : 'border-white/[0.07] focus:border-cyan/40 focus:bg-cyan-dim'
-                      }`}
+                      name="company"
+                      autoComplete="organization"
+                      placeholder="Your company or organisation (optional)"
+                      className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white placeholder:text-white/20 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300"
                     />
-                    {errors.name && <p className="text-[11px] text-red-400/70">{errors.name}</p>}
                   </div>
+
+                  {/* Project Type + Budget */}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="projectType" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
+                        Project Type
+                      </label>
+                      <select
+                        id="projectType"
+                        name="projectType"
+                        className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white/50 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300 appearance-none cursor-pointer"
+                      >
+                        <option value="" className="bg-[#0d1117]">Select type...</option>
+                        <option value="Full-Time Position" className="bg-[#0d1117]">Full-Time Position</option>
+                        <option value="Website" className="bg-[#0d1117]">Website</option>
+                        <option value="Web Application" className="bg-[#0d1117]">Web Application</option>
+                        <option value="Landing Page" className="bg-[#0d1117]">Landing Page</option>
+                        <option value="E-commerce" className="bg-[#0d1117]">E-commerce</option>
+                        <option value="SaaS Product" className="bg-[#0d1117]">SaaS Product</option>
+                        <option value="Frontend Only" className="bg-[#0d1117]">Frontend Only</option>
+                        <option value="Full-Stack App" className="bg-[#0d1117]">Full-Stack App</option>
+                        <option value="Website Redesign" className="bg-[#0d1117]">Website Redesign</option>
+                        <option value="Other" className="bg-[#0d1117]">Other</option>
+                      </select>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="budget" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
+                        Budget
+                      </label>
+                      <select
+                        id="budget"
+                        name="budget"
+                        className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white/50 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300 appearance-none cursor-pointer"
+                      >
+                        <option value="" className="bg-[#0d1117]">Select range...</option>
+                        <option value="N/A — Full-Time Role" className="bg-[#0d1117]">N/A — Full-Time Role</option>
+                        <option value="Under $500" className="bg-[#0d1117]">Under $500</option>
+                        <option value="$500 – $1,000" className="bg-[#0d1117]">$500 – $1,000</option>
+                        <option value="$1,000 – $2,500" className="bg-[#0d1117]">$1,000 – $2,500</option>
+                        <option value="$2,500 – $5,000" className="bg-[#0d1117]">$2,500 – $5,000</option>
+                        <option value="$5,000 – $10,000" className="bg-[#0d1117]">$5,000 – $10,000</option>
+                        <option value="$10,000+" className="bg-[#0d1117]">$10,000+</option>
+                        <option value="Not sure yet" className="bg-[#0d1117]">Not sure yet</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Message */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
-                      Email <span className="text-red-400/50">*</span>
+                    <label htmlFor="message" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
+                      Message <span className="text-red-400/50">*</span>
                     </label>
-                    <input
-                      id="email"
-                      type="email"
+                    <textarea
+                      id="message"
+                      name="message"
                       required
-                      autoComplete="email"
-                      value={form.email}
-                      onChange={(e) => handleChange('email', e.target.value)}
-                      placeholder="john@company.com"
-                      className={`w-full bg-white/[0.02] border rounded-sm px-5 py-4 text-[14px] text-white placeholder:text-white/20 focus:outline-none transition-all duration-300 ${
-                        errors.email ? 'border-red-500/40 bg-red-500/5' : 'border-white/[0.07] focus:border-cyan/40 focus:bg-cyan-dim'
-                      }`}
+                      rows={5}
+                      placeholder="Tell me about your project — what you're building, your timeline, and any specific requirements..."
+                      className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white placeholder:text-white/20 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300 resize-none"
                     />
-                    {errors.email && <p className="text-[11px] text-red-400/70">{errors.email}</p>}
                   </div>
-                </div>
 
-                {/* Company */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="company" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
-                    Company
-                  </label>
-                  <input
-                    id="company"
-                    type="text"
-                    autoComplete="organization"
-                    value={form.company}
-                    onChange={(e) => handleChange('company', e.target.value)}
-                    placeholder="Your company or organisation (optional)"
-                    className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white placeholder:text-white/20 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300"
-                  />
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    className="btn-primary self-start group"
+                  >
+                    Send Message
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform duration-200">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </button>
                 </div>
-
-                {/* Project Type + Budget */}
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="projectType" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
-                      Project Type
-                    </label>
-                    <select
-                      id="projectType"
-                      value={form.projectType}
-                      onChange={(e) => handleChange('projectType', e.target.value)}
-                      className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white/50 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300 appearance-none cursor-pointer"
-                    >
-                      <option value="" className="bg-[#0d1117]">Select type...</option>
-                      {projectTypes.map((t) => (
-                        <option key={t} value={t} className="bg-[#0d1117]">{t}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="budget" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
-                      Budget
-                    </label>
-                    <select
-                      id="budget"
-                      value={form.budget}
-                      onChange={(e) => handleChange('budget', e.target.value)}
-                      className="w-full bg-white/[0.02] border border-white/[0.07] rounded-sm px-5 py-4 text-[14px] text-white/50 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300 appearance-none cursor-pointer"
-                    >
-                      <option value="" className="bg-[#0d1117]">Select range...</option>
-                      {budgetRanges.map((b) => (
-                        <option key={b} value={b} className="bg-[#0d1117]">{b}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className="text-[11px] font-mono tracking-[0.15em] text-white/30 uppercase">
-                    Message <span className="text-red-400/50">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) => handleChange('message', e.target.value)}
-                    placeholder="Tell me about your project — what you're building, your timeline, and any specific requirements..."
-                    className={`w-full bg-white/[0.02] border rounded-sm px-5 py-4 text-[14px] text-white placeholder:text-white/20 focus:outline-none focus:border-cyan/40 focus:bg-cyan-dim transition-all duration-300 resize-none ${
-                      errors.message ? 'border-red-500/40 bg-red-500/5' : 'border-white/[0.07]'
-                    }`}
-                  />
-                  {errors.message && <p className="text-[11px] text-red-400/70">{errors.message}</p>}
-                </div>
-
-                {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="btn-primary self-start group disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {status === 'sending' ? (
-                    'Sending...'
-                  ) : (
-                    <>
-                      Send Message
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
-                    </>
-                  )}
-                </button>
               </form>
             )}
           </motion.div>

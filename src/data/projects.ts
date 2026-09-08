@@ -1,3 +1,9 @@
+import novaraImg from '../assets/screenshots/novara.jpg';
+import nexaaiImg from '../assets/screenshots/nexaai.jpg';
+import techzoneImg from '../assets/screenshots/techzone.jpg';
+import freelancerosImg from '../assets/screenshots/freelanceros.jpg';
+import portfolioImg from '../assets/screenshots/portfolio.jpg';
+
 export interface Project {
   id: number;
   title: string;
@@ -5,6 +11,7 @@ export interface Project {
   tags: string[];
   image: string;
   demo: string;
+  demoUrl: string;
   github: string;
   year: string;
 }
@@ -18,6 +25,7 @@ export const projects: Project[] = [
     tags: ['Next.js 16', 'Tailwind CSS v4', 'Radix UI', 'TypeScript', 'localStorage'],
     image: 'https://raw.githubusercontent.com/Muaddd1/freelancer-crm-demo/main/screenshots/01-dashboard.png',
     demo: 'https://muadme.gumroad.com/l/FreelancerCRM',
+    demoUrl: 'https://freelancer-crm-ivory.vercel.app',
     github: 'https://github.com/Muaddd1/freelancer-crm',
     year: '2026',
   },
@@ -27,8 +35,9 @@ export const projects: Project[] = [
     description:
       'My personal developer portfolio showcasing all projects. Built with React, Vite, Tailwind CSS, and Framer Motion. Features smooth animations, dark cyber aesthetic, and responsive design.',
     tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Portfolio'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+    image: portfolioImg,
     demo: 'https://muad-portfolio.vercel.app',
+    demoUrl: 'https://muad-portfolio.vercel.app',
     github: 'https://github.com/Muaddd1/Portfolio',
     year: '2025',
   },
@@ -38,8 +47,9 @@ export const projects: Project[] = [
     description:
       'A complete AI SaaS platform template with warm luxury design. Features AI chat, templates, agents, analytics, team management, and full auth flow. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.',
     tags: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'AI'],
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+    image: novaraImg,
     demo: 'https://muadme.gumroad.com/l/Novara',
+    demoUrl: 'https://novara-silk.vercel.app',
     github: 'https://github.com/Muaddd1/Novara',
     year: '2025',
   },
@@ -49,8 +59,9 @@ export const projects: Project[] = [
     description:
       'Immersive 3D e-commerce storefront built with React Three Fiber, Three.js, and Tailwind CSS. Features smooth animations, 3D product visuals, and a premium shopping experience.',
     tags: ['React', 'Three.js', 'Tailwind CSS', 'GSAP', 'E-Commerce'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    image: techzoneImg,
     demo: 'https://techzone-shop1.vercel.app',
+    demoUrl: 'https://techzone-shop1.vercel.app',
     github: 'https://github.com/Muaddd1/TechZone-Shop',
     year: '2025',
   },
@@ -60,8 +71,9 @@ export const projects: Project[] = [
     description:
       'Premium AI platform with intelligent automation, multi-model support, and enterprise features. A production-ready AI workspace for teams that demand excellence.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'AI', 'Enterprise'],
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
+    image: nexaaiImg,
     demo: 'https://muadme.gumroad.com/l/Nexaai',
+    demoUrl: 'https://nexa-ai-silk.vercel.app',
     github: 'https://github.com/Muaddd1/NexaAI',
     year: '2025',
   },
@@ -71,8 +83,9 @@ export const projects: Project[] = [
     description:
       'A complete freelancer management SaaS — clients, projects, invoices, proposals, contracts, time tracking, expenses, leads, analytics, and automations. Built with Next.js 14, PostgreSQL, NextAuth, and premium dark mode UI.',
     tags: ['Next.js 14', 'PostgreSQL', 'NextAuth', 'Prisma', 'SaaS'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    image: freelancerosImg,
     demo: 'https://muadme.gumroad.com/l/FreelancerOS',
+    demoUrl: 'https://freelancer-os-gamma.vercel.app',
     github: 'https://github.com/Muaddd1/FreelancerOS',
     year: '2026',
   },

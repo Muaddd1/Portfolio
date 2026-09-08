@@ -134,7 +134,7 @@ export default function Navbar() {
             <div className="flex items-center gap-5">
               <span className="hidden md:flex items-center gap-2 text-[11px] font-mono text-white/30 tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Available
+                Open to work
               </span>
               <button
                 onClick={() => setOpen((o) => !o)}
