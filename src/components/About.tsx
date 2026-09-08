@@ -184,7 +184,7 @@ export default function About() {
                 <div className="pl-5">
                   <span className="text-[#ff7b72]">status</span>
                   <span className="text-white/50">: </span>
-                  <span className="text-[#7ee787]">'available'</span>
+                  <span className="text-[#7ee787]">'open to full-time & freelance'</span>
                 </div>
                 <div>
                   <span className="text-[#a5d6ff]">{'}'}</span>
@@ -192,6 +192,33 @@ export default function About() {
                 </div>
               </div>
             </motion.div>
+
+            {/* GitHub activity — real, live public data */}
+            <motion.a
+              href="https://github.com/Muaddd1"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="block mt-6 bg-white/[0.02] border border-white/[0.06] rounded-lg p-6 hover:border-cyan/15 hover:bg-white/[0.03] transition-all duration-300 group"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <p className="text-[10px] font-mono text-cyan/50 uppercase tracking-widest">
+                  GitHub Activity
+                </p>
+                <span className="text-[11px] font-mono text-white/25 group-hover:text-cyan/60 transition-colors duration-300">
+                  @Muaddd1
+                </span>
+              </div>
+              <img
+                src="https://ghchart.rshah.org/00d4ff/Muaddd1"
+                alt="Mouad Sehli's GitHub contribution graph"
+                className="w-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
+              />
+            </motion.a>
           </motion.div>
         </div>
       </div>
