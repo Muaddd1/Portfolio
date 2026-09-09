@@ -1,3 +1,4 @@
+import aureliaImg from '../assets/screenshots/aurelia.jpg';
 import novaraImg from '../assets/screenshots/novara.jpg';
 import nexaaiImg from '../assets/screenshots/nexaai.jpg';
 import techzoneImg from '../assets/screenshots/techzone.jpg';
@@ -25,6 +26,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 8,
+    title: 'AURELIA',
+    description:
+      'A complete, production-ready luxury e-commerce storefront template. 13 routes, a dark-luxury design system with a light-mode variant, Framer Motion page transitions, Zustand cart/wishlist state, and a multi-step checkout built with React Hook Form + Zod. Every product image is visually verified brand-safe.',
+    tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Framer Motion', 'Zustand'],
+    image: aureliaImg,
+    demo: 'https://muadme.gumroad.com/l/zimpb',
+    demoUrl: 'https://aurelia-template-phi.vercel.app',
+    github: 'https://github.com/Muaddd1/AURELIA',
+    year: '2026',
+  },
   {
     id: 7,
     title: 'ClipFlow',
