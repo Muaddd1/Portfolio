@@ -1,3 +1,4 @@
+import aurumImg from '../assets/screenshots/aurum.jpg';
 import aureliaImg from '../assets/screenshots/aurelia.jpg';
 import novaraImg from '../assets/screenshots/novara.jpg';
 import nexaaiImg from '../assets/screenshots/nexaai.jpg';
@@ -26,6 +27,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 9,
+    title: 'AURUM',
+    description:
+      'A niche e-commerce storefront template built specifically for gold shops, jewelers, and jewelry brands — karats, gram weight, making charges, and certificates are first-class. Signature feature: a live Gold Price Calculator with a full currency-aware breakdown. Full Arabic/English bilingual support with true RTL layout, not just translated strings.',
+    tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Framer Motion', 'Zustand', 'i18n/RTL'],
+    image: aurumImg,
+    demo: 'https://muadme.gumroad.com/l/aurum',
+    demoUrl: 'https://aurum-template-muad1.vercel.app',
+    github: 'https://github.com/Muaddd1/AURUM',
+    year: '2026',
+  },
   {
     id: 8,
     title: 'AURELIA',
