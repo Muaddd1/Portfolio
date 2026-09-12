@@ -1,3 +1,4 @@
+import plinthImg from '../assets/screenshots/plinth.jpg';
 import aurumImg from '../assets/screenshots/aurum.jpg';
 import aureliaImg from '../assets/screenshots/aurelia.jpg';
 import novaraImg from '../assets/screenshots/novara.jpg';
@@ -27,6 +28,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 10,
+    title: 'Plinth',
+    description:
+      'A premium, single-file HTML website template for interior design studios and boutique consultancy brands — no framework, no build step. A CSS-only 3D "material sample" hero scene, deliberately art-directed light/dark modes, 4 hand-built CSS portfolio compositions, a working validated contact form, and a keyboard-accessible flip card, all in one index.html.',
+    tags: ['HTML5', 'CSS3', 'Vanilla JS', 'No-Build', 'Single-File'],
+    image: plinthImg,
+    demo: 'https://muadme.gumroad.com/l/yzxssh',
+    demoUrl: 'https://plinth-template.vercel.app',
+    github: 'https://github.com/Muaddd1/PLINTH',
+    year: '2026',
+  },
   {
     id: 9,
     title: 'AURUM',
