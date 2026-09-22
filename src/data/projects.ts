@@ -1,3 +1,4 @@
+import vellutoImg from '../assets/screenshots/velluto.jpg';
 import plinthImg from '../assets/screenshots/plinth.jpg';
 import aurumImg from '../assets/screenshots/aurum.jpg';
 import aureliaImg from '../assets/screenshots/aurelia.jpg';
@@ -28,6 +29,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 11,
+    title: 'VELLUTO',
+    description:
+      'A cinematic, futuristic coffee-brand website template. A realistic 3D espresso cup with a scroll-driven camera that dives into the crema, an interactive origin map, a fully 3D bean-to-cup sequence (bean, roast, grind, brew), a working frontend shop, and adaptive quality that falls back to rendered stills on weak devices.',
+    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Three.js / R3F', 'Framer Motion', 'GSAP', 'Zustand'],
+    image: vellutoImg,
+    demo: 'https://muadme.gumroad.com/l/ydqpk',
+    demoUrl: 'https://velluto-muad1.vercel.app',
+    github: 'https://github.com/Muaddd1/VELLUTO',
+    year: '2026',
+  },
   {
     id: 10,
     title: 'Plinth',
