@@ -1,3 +1,4 @@
+import fadehouseImg from '../assets/screenshots/fadehouse.jpg';
 import eloraImg from '../assets/screenshots/elora.jpg';
 import vellutoImg from '../assets/screenshots/velluto.jpg';
 import plinthImg from '../assets/screenshots/plinth.jpg';
@@ -30,6 +31,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 13,
+    title: 'FADEHOUSE',
+    description:
+      'A premium barbershop website template built to book a cut in under a minute: service, barber, calendar, time slots that respect opening hours, name and phone, then a confirmation with Google Calendar, .ics, directions and WhatsApp. A 3D cordless clipper built in code turns with scroll, with transparent stills on phones and weak devices, plus a light theme and structured data.',
+    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Three.js / R3F', 'Booking engine'],
+    image: fadehouseImg,
+    demo: 'https://muadme.gumroad.com/l/jyhztr',
+    demoUrl: 'https://fadehouse-muad1.vercel.app',
+    github: 'https://github.com/Muaddd1/FADEHOUSE',
+    year: '2026',
+  },
   {
     id: 12,
     title: 'ÉLORA',
