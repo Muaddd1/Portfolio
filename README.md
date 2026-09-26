@@ -14,6 +14,8 @@ Modern, minimal portfolio built with **React**, **TypeScript**, and **Tailwind C
 
 ## Development
 
+Requires **Node.js 20.19+ or 22.12+** (Vite 8's minimum).
+
 ```bash
 npm install
 npm run dev
