@@ -1,3 +1,4 @@
+import nexformImg from '../assets/screenshots/nexform.jpg';
 import fadehouseImg from '../assets/screenshots/fadehouse.jpg';
 import eloraImg from '../assets/screenshots/elora.jpg';
 import vellutoImg from '../assets/screenshots/velluto.jpg';
@@ -31,6 +32,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 14,
+    title: 'NEXFORM',
+    description:
+      'A futuristic personal-trainer website template: a 3D athlete built in code, a 60-second quiz that turns six answers into a training path, a 3D body map that lights up muscle groups, a program explorer, workout preview and exercise library, and a five-step booking flow that ends in “YOU’RE IN.” Phones and weak devices get pre-rendered stills; Lighthouse 95+ on mobile.',
+    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Three.js / R3F', 'Booking engine'],
+    image: nexformImg,
+    demo: 'https://muadme.gumroad.com/l/ufsnay',
+    demoUrl: 'https://nexform-muad1.vercel.app',
+    github: 'https://github.com/Muaddd1/NEXFORM',
+    year: '2026',
+  },
   {
     id: 13,
     title: 'FADEHOUSE',
