@@ -10,6 +10,14 @@
     "url": "git+https://github.com/Muaddd1/Portfolio.git"
   },
   "description": "Mouad Sehli's frontend developer portfolio",
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "tailwindcss",
+    "framer-motion",
+    "frontend-developer"
+  ],
   "homepage": "https://muad-portfolio.vercel.app",
   "type": "module",
   "scripts": {
