@@ -41,5 +41,9 @@
     "oxlint": "^1.79.0",
     "playwright": "^1.63.0",
     "vite": "^8.2.2"
+  },
+  "author": "Mouad Sehli (https://muad-portfolio.vercel.app)",
+  "bugs": {
+    "url": "https://github.com/Muaddd1/Portfolio/issues"
   }
 }
