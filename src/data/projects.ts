@@ -1,3 +1,4 @@
+import vantaDetailImg from '../assets/screenshots/vanta-detail.jpg';
 import nexformImg from '../assets/screenshots/nexform.jpg';
 import fadehouseImg from '../assets/screenshots/fadehouse.jpg';
 import eloraImg from '../assets/screenshots/elora.jpg';
@@ -32,6 +33,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 15,
+    title: 'VANTA DETAIL',
+    description:
+      'A premium automotive detailing website template: a realistic 3D car that circles and gets cleaner as you scroll, a live quote builder with vehicle-size pricing and a service-area check, and a seven-step booking flow that ends with a booking number, calendar export and WhatsApp. Includes before/after sliders, a paint surface lab and a water-beading demo that reacts to the cursor. Phones get a pre-rendered scroll sequence; Lighthouse 99 on desktop.',
+    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Three.js / R3F', 'Booking engine'],
+    image: vantaDetailImg,
+    demo: 'https://muadme.gumroad.com/l/wdpgn',
+    demoUrl: 'https://vanta-detail-muad1.vercel.app',
+    github: 'https://github.com/Muaddd1/VANTA-DETAIL',
+    year: '2026',
+  },
   {
     id: 14,
     title: 'NEXFORM',
