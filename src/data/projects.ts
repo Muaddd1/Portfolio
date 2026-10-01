@@ -1,3 +1,4 @@
+import syntraImg from '../assets/screenshots/syntra.jpg';
 import vantaDetailImg from '../assets/screenshots/vanta-detail.jpg';
 import nexformImg from '../assets/screenshots/nexform.jpg';
 import fadehouseImg from '../assets/screenshots/fadehouse.jpg';
@@ -33,6 +34,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 16,
+    title: 'SYNTRA',
+    description:
+      'A premium AI SaaS template: a marketing site plus a 22-route AI business dashboard. An AI command palette with structured answers, a human-in-the-loop approval queue that writes to an exportable audit log, a visual workflow builder that also turns plain English into steps, five AI agents with permissions and live activity, and role-based access. Runs fully in demo mode with a typed mock AI layer. Lighthouse 98 on desktop.',
+    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Framer Motion', 'AI SaaS UI'],
+    image: syntraImg,
+    demo: 'https://muadme.gumroad.com/l/qamgrq',
+    demoUrl: 'https://syntra-muad1.vercel.app',
+    github: 'https://github.com/Muaddd1/SYNTRA',
+    year: '2026',
+  },
   {
     id: 15,
     title: 'VANTA DETAIL',
