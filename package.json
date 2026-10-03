@@ -10,6 +10,7 @@
     "url": "git+https://github.com/Muaddd1/Portfolio.git"
   },
   "description": "Mouad Sehli's frontend developer portfolio",
+  "license": "MIT",
   "keywords": [
     "portfolio",
     "react",
