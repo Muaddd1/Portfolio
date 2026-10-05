@@ -43,6 +43,15 @@ npm run lint     # lint with oxlint
 - [PLINTH](https://github.com/Muaddd1/PLINTH) — single-file interior design studio template ([demo](https://plinth-template.vercel.app))
 - [GOLDEN CRUST](https://github.com/Muaddd1/GOLDEN-CRUST) — pizza restaurant template with a 3D pizza hero ([demo](https://golden-crust-muad1.vercel.app))
 
+## Other Projects
+
+- [ClipFlow](https://github.com/Muaddd1/clipflow) ([demo](https://clipflow-sepia.vercel.app))
+- [Freelancer CRM](https://github.com/Muaddd1/freelancer-crm) ([demo](https://freelancer-crm-ivory.vercel.app))
+- [Novara](https://github.com/Muaddd1/Novara) ([demo](https://novara-silk.vercel.app))
+- [TechZone Shop](https://github.com/Muaddd1/TechZone-Shop) ([demo](https://techzone-shop1.vercel.app))
+- [NexaAI](https://github.com/Muaddd1/NexaAI) ([demo](https://nexa-ai-silk.vercel.app))
+- [FreelancerOS](https://github.com/Muaddd1/FreelancerOS) ([demo](https://freelancer-os-gamma.vercel.app))
+
 ## License
 
 MIT, see [LICENSE](./LICENSE).
