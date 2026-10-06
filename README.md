@@ -46,8 +46,8 @@ npm run lint     # lint with oxlint
 ## Other Projects
 
 - [ClipFlow](https://github.com/Muaddd1/clipflow) ([demo](https://clipflow-sepia.vercel.app))
-- [Freelancer CRM](https://github.com/Muaddd1/freelancer-crm) ([demo](https://freelancer-crm-ivory.vercel.app))
-- [Novara](https://github.com/Muaddd1/Novara) ([demo](https://novara-silk.vercel.app))
+- [Freelancer CRM](https://github.com/Muaddd1/freelancer-crm-demo) ([demo](https://freelancer-crm-ivory.vercel.app))
+- Novara (private repo) ([demo](https://novara-silk.vercel.app))
 - [TechZone Shop](https://github.com/Muaddd1/TechZone-Shop) ([demo](https://techzone-shop1.vercel.app))
 - [NexaAI](https://github.com/Muaddd1/NexaAI) ([demo](https://nexa-ai-silk.vercel.app))
 - [FreelancerOS](https://github.com/Muaddd1/FreelancerOS) ([demo](https://freelancer-os-gamma.vercel.app))
