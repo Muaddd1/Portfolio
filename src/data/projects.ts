@@ -1,3 +1,4 @@
+import proofImg from '../assets/screenshots/proof.jpg';
 import syntraImg from '../assets/screenshots/syntra.jpg';
 import vantaDetailImg from '../assets/screenshots/vanta-detail.jpg';
 import nexformImg from '../assets/screenshots/nexform.jpg';
@@ -34,6 +35,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 17,
+    title: 'PROOF',
+    description:
+      'A premium AI SaaS template for measuring what AI actually accomplishes: a scroll-story landing page with a live mini-product and a 3D core, plus a 15-route app. Missions tie AI work to business goals, AI Replay reconstructs any task step by step, an ROI center derives every number from editable assumptions, and an approval center logs every decision. Includes a ⌘K command center, a plain-English workflow builder and a fully seeded demo workspace with a typed mock AI layer.',
+    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Framer Motion', 'AI SaaS UI'],
+    image: proofImg,
+    demo: 'https://muadme.gumroad.com/l/lngppq',
+    demoUrl: 'https://proof-muad1.vercel.app',
+    github: 'https://github.com/Muaddd1/PROOF',
+    year: '2026',
+  },
   {
     id: 16,
     title: 'SYNTRA',
