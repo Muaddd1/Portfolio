@@ -54,6 +54,23 @@ npm run lint     # lint with oxlint
 - [FreelancerOS](https://github.com/Muaddd1/FreelancerOS) ([demo](https://freelancer-os-gamma.vercel.app))
 - Burger Market, full-stack ordering + POS + kitchen display (private repo) ([demo](https://burger-market-muad1.vercel.app))
 
+## Website templates
+
+Premium templates I build and sell (source on Gumroad):
+
+- [SYNTRA](https://github.com/Muaddd1/SYNTRA) — AI business command-center SaaS template with a 22-route dashboard and a mock AI layer ([demo](https://syntra-muad1.vercel.app))
+- [PROOF](https://github.com/Muaddd1/PROOF) — AI performance and outcome SaaS template with AI task replays, missions, a transparent ROI center and an approval center ([demo](https://proof-muad1.vercel.app))
+- [VANTA DETAIL](https://github.com/Muaddd1/VANTA-DETAIL) — automotive detailing template with a scroll-driven 3D car, a live quote builder and a seven-step booking flow ([demo](https://vanta-detail-muad1.vercel.app))
+- [NEXFORM](https://github.com/Muaddd1/NEXFORM) — futuristic personal-trainer template with a 3D athlete, a personalisation quiz, a 3D body map and a real booking flow ([demo](https://nexform-muad1.vercel.app))
+- [FADEHOUSE](https://github.com/Muaddd1/FADEHOUSE) — premium barbershop template with a real booking flow and a 3D clipper built in code ([demo](https://fadehouse-muad1.vercel.app))
+- [ÉLORA](https://github.com/Muaddd1/ELORA) — luxury beauty-salon template with a real booking flow and a 3D serum bottle ([demo](https://elora-muad1.vercel.app))
+- [VELLUTO](https://github.com/Muaddd1/VELLUTO) — cinematic 3D coffee-brand template with a scroll-driven espresso cup ([demo](https://velluto-muad1.vercel.app))
+- [AURELIA](https://github.com/Muaddd1/AURELIA) — luxury e-commerce React template ([demo](https://aurelia-template-phi.vercel.app))
+- [VANTA](https://github.com/Muaddd1/VANTA) — premium digital-product storefront template ([demo](https://vanta-creator-os.vercel.app))
+- [AURUM](https://github.com/Muaddd1/AURUM) — luxury gold jewelry template with a live gold price calculator and Arabic RTL ([demo](https://aurum-template-muad1.vercel.app))
+- [PLINTH](https://github.com/Muaddd1/PLINTH) — single-file interior design studio template ([demo](https://plinth-template.vercel.app))
+- [GOLDEN CRUST](https://github.com/Muaddd1/GOLDEN-CRUST) — pizza restaurant template with a 3D pizza hero ([demo](https://golden-crust-muad1.vercel.app))
+
 ## License
 
 MIT, see [LICENSE](./LICENSE).
