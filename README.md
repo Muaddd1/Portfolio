@@ -52,6 +52,7 @@ npm run lint     # lint with oxlint
 - [TechZone Shop](https://github.com/Muaddd1/TechZone-Shop) ([demo](https://techzone-shop1.vercel.app))
 - [NexaAI](https://github.com/Muaddd1/NexaAI) ([demo](https://nexa-ai-silk.vercel.app))
 - [FreelancerOS](https://github.com/Muaddd1/FreelancerOS) ([demo](https://freelancer-os-gamma.vercel.app))
+- Burger Market, full-stack ordering + POS + kitchen display (private repo) ([demo](https://burger-market-muad1.vercel.app))
 
 ## License
 
