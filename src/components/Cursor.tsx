@@ -4,7 +4,11 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 const INTERACTIVE_SELECTOR = 'a, button, input, textarea, select, [role="button"], [data-cursor-hover]';
 
 export default function Cursor() {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled] = useState(
+    () =>
+      window.matchMedia('(pointer: fine)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  );
   const [hovering, setHovering] = useState(false);
   const [pressed, setPressed] = useState(false);
 
@@ -16,11 +20,8 @@ export default function Cursor() {
   const dotY = useSpring(y, { damping: 40, stiffness: 900, mass: 0.2 });
 
   useEffect(() => {
-    const finePointer = window.matchMedia('(pointer: fine)').matches;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!finePointer || reducedMotion) return;
+    if (!enabled) return;
 
-    setEnabled(true);
     document.documentElement.classList.add('custom-cursor-active');
 
     const onMove = (e: MouseEvent) => {
@@ -49,7 +50,7 @@ export default function Cursor() {
       window.removeEventListener('mouseup', onUp);
       document.removeEventListener('mouseleave', onLeaveWindow);
     };
-  }, [x, y]);
+  }, [enabled, x, y]);
 
   if (!enabled) return null;
 
