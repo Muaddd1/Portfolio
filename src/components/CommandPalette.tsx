@@ -119,10 +119,6 @@ export default function CommandPalette() {
     }
   }, [open]);
 
-  useEffect(() => {
-    setSelected(0);
-  }, [query]);
-
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
@@ -181,7 +177,7 @@ export default function CommandPalette() {
                   ref={inputRef}
                   type="text"
                   value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => { setQuery(e.target.value); setSelected(0); }}
                   onKeyDown={handleKeyDown}
                   placeholder="Search commands..."
                   className="flex-1 bg-transparent text-[14px] text-white placeholder:text-white/20 focus:outline-none"
