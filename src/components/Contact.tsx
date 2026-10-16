@@ -16,13 +16,11 @@ const LinkedInIcon = () => (
 );
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
+  // Redirected back after FormSubmit submission?
+  const [sent, setSent] = useState(() => new URLSearchParams(window.location.search).get('sent') === '1');
 
-  // Check if redirected back after FormSubmit submission
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('sent') === '1') {
-      setSent(true);
+    if (sent) {
       // Clean URL without reload
       window.history.replaceState({}, '', window.location.pathname + '#contact');
       // Scroll to contact
@@ -30,7 +28,7 @@ export default function Contact() {
         document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     }
-  }, []);
+  }, [sent]);
 
   return (
     <section
