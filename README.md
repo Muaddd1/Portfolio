@@ -53,6 +53,7 @@ npm run lint     # lint with oxlint
 - [NexaAI](https://github.com/Muaddd1/NexaAI) ([demo](https://nexa-ai-silk.vercel.app))
 - [FreelancerOS](https://github.com/Muaddd1/FreelancerOS) ([demo](https://freelancer-os-gamma.vercel.app))
 - Burger Market, full-stack ordering + POS + kitchen display (private repo) ([demo](https://burger-market-muad1.vercel.app))
+- MARKETFLOW, online supermarket + POS + inventory + receipt printing (private repo) ([demo](https://marketflow-muad1.vercel.app))
 
 ## Website templates
 
