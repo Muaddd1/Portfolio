@@ -54,6 +54,7 @@ npm run lint     # lint with oxlint
 - [FreelancerOS](https://github.com/Muaddd1/FreelancerOS) ([demo](https://freelancer-os-gamma.vercel.app))
 - Burger Market, full-stack ordering + POS + kitchen display (private repo) ([demo](https://burger-market-muad1.vercel.app))
 - MARKETFLOW, online supermarket + POS + inventory + receipt printing (private repo) ([demo](https://marketflow-muad1.vercel.app))
+- VANTA RUN, cinematic 3D sneaker store with a colorway studio, drops and admin (private repo) ([demo](https://vanta-run-muad1.vercel.app))
 
 ## Website templates
 
