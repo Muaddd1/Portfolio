@@ -9,8 +9,9 @@ const experiences = [
     highlights: [
       "IT support and management of the provincial administration's computer systems",
       'Helping staff and departments with digital tools and day-to-day technical issues',
+      'Daily use of Microsoft Excel and Word for administrative documents, reports and data tracking',
     ],
-    tech: ['IT Support', 'Systems', 'Networks'],
+    tech: ['IT Support', 'Microsoft Excel', 'Microsoft Word'],
   },
   {
     company: 'Freelance',
