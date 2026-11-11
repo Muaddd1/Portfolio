@@ -31,22 +31,27 @@
     .print-bar {
       max-width: 780px;
       margin: 0 auto;
-      padding: 0 4px 12px;
+      padding: 16px 4px 0;
       display: flex;
       justify-content: flex-end;
+      gap: 8px;
     }
-    .print-btn {
+    .print-btn, .lang-btn {
       font-family: 'Segoe UI', sans-serif;
       font-size: 13px;
       font-weight: 600;
-      color: #fff;
-      background: var(--accent);
-      border: none;
       border-radius: 6px;
       padding: 9px 18px;
       cursor: pointer;
     }
+    .print-btn { color: #fff; background: var(--accent); border: none; }
     .print-btn:hover { background: #007690; }
+    .lang-btn { color: var(--muted); background: #fff; border: 1px solid var(--line); }
+    .lang-btn[aria-pressed="true"] { color: var(--ink); border-color: var(--ink); }
+
+    /* language switch: one page per language */
+    html[lang="en"] .page[lang="fr"],
+    html[lang="fr"] .page[lang="en"] { display: none; }
 
     header {
       display: flex;
@@ -198,17 +203,20 @@
 </head>
 <body>
   <div class="print-bar">
-    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">Français</button>
+    <button class="print-btn" onclick="window.print()" data-en="Print / Save as PDF" data-fr="Imprimer / PDF">Print / Save as PDF</button>
   </div>
 
-  <div class="page">
+  <!-- ===================== ENGLISH ===================== -->
+  <div class="page" lang="en">
     <header>
       <div>
         <h1>Mouad Sehli</h1>
-        <p class="role">Frontend Developer</p>
+        <p class="role">Frontend Developer · IT Specialist</p>
       </div>
       <div class="contact">
-        <div>Morocco · Open to full-time &amp; freelance</div>
+        <div>Taourirt, Morocco · Open to freelance &amp; full-time</div>
         <div><a href="mailto:smoad5456@gmail.com">smoad5456@gmail.com</a></div>
         <div><a href="https://muad-portfolio.vercel.app" target="_blank" rel="noopener">muad-portfolio.vercel.app</a></div>
         <div><a href="https://github.com/Muaddd1" target="_blank" rel="noopener">github.com/Muaddd1</a></div>
@@ -219,12 +227,11 @@
     <section>
       <h2>Summary</h2>
       <p class="summary">
-        Frontend developer with 3+ years of experience building production web interfaces.
-        Shipped 40+ websites as part of a development team for private clients (2022–2025),
-        working directly within internal teams from design handoff through deployment.
-        Now working independently — open to freelance projects and full-time roles.
-        Comfortable across the full frontend stack: React, TypeScript, Next.js, and modern CSS,
-        with backend exposure through PHP and Laravel.
+        Frontend developer and IT specialist currently working at the Ministry of the Interior
+        (Province of Taourirt). Builds modern web applications with React, TypeScript and Next.js,
+        from interface design to deployment, alongside freelance and independent projects.
+        Uses AI tools such as Claude daily to design, write and ship code faster.
+        Open to freelance projects and full-time roles.
       </p>
     </section>
 
@@ -233,27 +240,39 @@
 
       <div class="entry">
         <div class="entry-head">
+          <span class="entry-title">IT Specialist (Agent d'autorité – Informaticien) — Ministry of the Interior</span>
+          <span class="entry-period">Apr 2025 — Present</span>
+        </div>
+        <div class="entry-sub">Province of Taourirt, Morocco</div>
+        <ul class="bullets">
+          <li>IT support and management of the provincial administration's computer systems</li>
+          <li>Helping staff and departments with digital tools and day-to-day technical issues</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
           <span class="entry-title">Frontend Developer — Independent</span>
           <span class="entry-period">2025 — Present</span>
         </div>
         <div class="entry-sub">Remote — Morocco</div>
         <ul class="bullets">
-          <li>Went independent after building production frontend experience within a development team</li>
-          <li>Building and shipping frontend products end-to-end — from UI implementation to deployment</li>
+          <li>Building and shipping web products end-to-end — from UI implementation to deployment</li>
+          <li>AI-assisted development workflow with Claude / Claude Code</li>
           <li>Open to both freelance projects and full-time roles</li>
         </ul>
       </div>
 
       <div class="entry">
         <div class="entry-head">
-          <span class="entry-title">Frontend Developer — Private Clients (NDA)</span>
+          <span class="entry-title">Frontend Developer — Freelance</span>
           <span class="entry-period">2022 — 2025</span>
         </div>
         <div class="entry-sub">Morocco</div>
         <ul class="bullets">
-          <li>Contributed frontend development to 40+ production websites as part of a development team</li>
-          <li>Worked directly inside internal teams — turning requirements and design handoffs into shipped features</li>
-          <li>Focused on clean, maintainable component architecture built to survive ongoing iteration</li>
+          <li>Developed websites and web interfaces for private clients</li>
+          <li>Turned client requirements and designs into working, responsive websites</li>
+          <li>Focused on clean, maintainable code that is easy to update</li>
         </ul>
       </div>
 
@@ -265,8 +284,20 @@
         <div class="entry-sub">Morocco</div>
         <ul class="bullets">
           <li>Learned modern frontend development through hands-on project building</li>
-          <li>Completed 20+ personal projects across React, JavaScript, and CSS</li>
-          <li>Transitioned from static sites to full interactive web applications</li>
+          <li>Moved from static sites to full interactive web applications with React</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Public Writer (Écrivain public)</span>
+          <span class="entry-period">2018 — 2023</span>
+        </div>
+        <div class="entry-sub">Morocco</div>
+        <ul class="bullets">
+          <li>Wrote administrative letters, requests and forms for citizens</li>
+          <li>Helped people with their administrative procedures</li>
+          <li>Worked alongside my studies</li>
         </ul>
       </div>
     </section>
@@ -275,39 +306,27 @@
       <h2>Selected Personal Projects</h2>
 
       <div class="entry">
-        <div class="entry-head">
-          <span class="entry-title">Freelancer CRM</span>
-        </div>
+        <div class="entry-head"><span class="entry-title">Freelancer CRM</span></div>
         <ul class="bullets">
           <li>Full client management app — clients, projects, invoices, proposals, contracts, and health scoring, all fully wired with localStorage persistence</li>
         </ul>
-        <div class="tags">
-          <span class="tag">Next.js 16</span><span class="tag">Tailwind CSS v4</span><span class="tag">Radix UI</span><span class="tag">TypeScript</span>
-        </div>
+        <div class="tags"><span class="tag">Next.js 16</span><span class="tag">Tailwind CSS v4</span><span class="tag">Radix UI</span><span class="tag">TypeScript</span></div>
       </div>
 
       <div class="entry">
-        <div class="entry-head">
-          <span class="entry-title">Novara — AI SaaS Platform Template</span>
-        </div>
+        <div class="entry-head"><span class="entry-title">Novara — AI SaaS Platform Template</span></div>
         <ul class="bullets">
           <li>AI workspace template with chat, agents, analytics, team management, and full auth flow</li>
         </ul>
-        <div class="tags">
-          <span class="tag">Next.js 14</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Framer Motion</span>
-        </div>
+        <div class="tags"><span class="tag">Next.js 14</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Framer Motion</span></div>
       </div>
 
       <div class="entry">
-        <div class="entry-head">
-          <span class="entry-title">TechZone Shop</span>
-        </div>
+        <div class="entry-head"><span class="entry-title">TechZone Shop</span></div>
         <ul class="bullets">
           <li>Immersive 3D e-commerce storefront with real-time product visualization</li>
         </ul>
-        <div class="tags">
-          <span class="tag">React</span><span class="tag">Three.js</span><span class="tag">GSAP</span><span class="tag">Tailwind CSS</span>
-        </div>
+        <div class="tags"><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">GSAP</span><span class="tag">Tailwind CSS</span></div>
       </div>
     </section>
 
@@ -317,31 +336,205 @@
         <div>
           <div class="skill-cat">
             <div class="skill-cat-label">Frontend</div>
-            <div class="skill-cat-items">React, JavaScript, TypeScript, Next.js, HTML5, CSS3, Tailwind CSS, WordPress</div>
+            <div class="skill-cat-items">React, JavaScript, TypeScript, Next.js, HTML5, CSS3, Tailwind CSS, Three.js, WordPress</div>
           </div>
           <div class="skill-cat">
             <div class="skill-cat-label">Backend</div>
-            <div class="skill-cat-items">PHP, Laravel, MySQL</div>
+            <div class="skill-cat-items">PHP, Laravel, MySQL, PostgreSQL, Prisma, Supabase</div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">AI</div>
+            <div class="skill-cat-items">Claude / Claude Code, AI-assisted development, prompt engineering</div>
           </div>
           <div class="skill-cat">
             <div class="skill-cat-label">Tools</div>
-            <div class="skill-cat-items">Git, GitHub, Figma, Vite</div>
+            <div class="skill-cat-items">Git, GitHub, Vercel, Figma, Vite</div>
           </div>
         </div>
         <div>
           <div class="skill-cat">
             <div class="skill-cat-label">Languages</div>
             <div class="lang-row"><span class="lang-name">Arabic</span><span class="lang-level">Native</span></div>
-            <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Intermediate</span></div>
             <div class="lang-row"><span class="lang-name">French</span><span class="lang-level">Intermediate</span></div>
+            <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Intermediate</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      Full portfolio, live demos, and case studies at muad-portfolio.vercel.app
-    </footer>
+    <footer>Full portfolio, live demos, and case studies at muad-portfolio.vercel.app</footer>
   </div>
+
+  <!-- ===================== FRANÇAIS ===================== -->
+  <div class="page" lang="fr">
+    <header>
+      <div>
+        <h1>Mouad Sehli</h1>
+        <p class="role">Développeur Frontend · Informaticien</p>
+      </div>
+      <div class="contact">
+        <div>Taourirt, Maroc · Ouvert au freelance &amp; CDI</div>
+        <div><a href="mailto:smoad5456@gmail.com">smoad5456@gmail.com</a></div>
+        <div><a href="https://muad-portfolio.vercel.app" target="_blank" rel="noopener">muad-portfolio.vercel.app</a></div>
+        <div><a href="https://github.com/Muaddd1" target="_blank" rel="noopener">github.com/Muaddd1</a></div>
+        <div><a href="https://www.linkedin.com/in/moad-sehli-553b46283/" target="_blank" rel="noopener">linkedin.com/in/moad-sehli</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profil</h2>
+      <p class="summary">
+        Développeur frontend et informaticien, actuellement en poste au Ministère de l'Intérieur
+        (Province de Taourirt). Je conçois des applications web modernes avec React, TypeScript et
+        Next.js, de l'interface jusqu'à la mise en ligne, en parallèle de projets freelance et indépendants.
+        J'utilise au quotidien des outils d'IA comme Claude pour concevoir, écrire et livrer du code plus rapidement.
+        Ouvert aux missions freelance et aux postes à temps plein.
+      </p>
+    </section>
+
+    <section>
+      <h2>Expérience professionnelle</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Agent d'autorité – Informaticien — Ministère de l'Intérieur</span>
+          <span class="entry-period">Avr. 2025 — Aujourd'hui</span>
+        </div>
+        <div class="entry-sub">Province de Taourirt, Maroc</div>
+        <ul class="bullets">
+          <li>Support informatique et gestion des systèmes informatiques de l'administration provinciale</li>
+          <li>Assistance aux agents et aux services sur les outils numériques et les problèmes techniques</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Développeur Frontend — Indépendant</span>
+          <span class="entry-period">2025 — Aujourd'hui</span>
+        </div>
+        <div class="entry-sub">À distance — Maroc</div>
+        <ul class="bullets">
+          <li>Conception et livraison de produits web de bout en bout — de l'interface au déploiement</li>
+          <li>Développement assisté par IA avec Claude / Claude Code</li>
+          <li>Ouvert aux missions freelance comme aux postes à temps plein</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Développeur Frontend — Freelance</span>
+          <span class="entry-period">2022 — 2025</span>
+        </div>
+        <div class="entry-sub">Maroc</div>
+        <ul class="bullets">
+          <li>Développement de sites et d'interfaces web pour des clients privés</li>
+          <li>Transformation des besoins et maquettes des clients en sites fonctionnels et responsives</li>
+          <li>Code propre et maintenable, facile à faire évoluer</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Développement web — Autodidacte</span>
+          <span class="entry-period">2020 — 2022</span>
+        </div>
+        <div class="entry-sub">Maroc</div>
+        <ul class="bullets">
+          <li>Apprentissage du développement frontend moderne par la pratique</li>
+          <li>Passage des sites statiques aux applications web interactives avec React</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Écrivain public</span>
+          <span class="entry-period">2018 — 2023</span>
+        </div>
+        <div class="entry-sub">Maroc</div>
+        <ul class="bullets">
+          <li>Rédaction de lettres, demandes et formulaires administratifs pour les citoyens</li>
+          <li>Accompagnement des usagers dans leurs démarches administratives</li>
+          <li>Activité exercée en parallèle de mes études</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projets personnels</h2>
+
+      <div class="entry">
+        <div class="entry-head"><span class="entry-title">Freelancer CRM</span></div>
+        <ul class="bullets">
+          <li>Application complète de gestion clients — clients, projets, factures, devis, contrats et suivi de santé client, avec persistance localStorage</li>
+        </ul>
+        <div class="tags"><span class="tag">Next.js 16</span><span class="tag">Tailwind CSS v4</span><span class="tag">Radix UI</span><span class="tag">TypeScript</span></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head"><span class="entry-title">Novara — Template de plateforme SaaS IA</span></div>
+        <ul class="bullets">
+          <li>Espace de travail IA avec chat, agents, statistiques, gestion d'équipe et authentification complète</li>
+        </ul>
+        <div class="tags"><span class="tag">Next.js 14</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Framer Motion</span></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head"><span class="entry-title">TechZone Shop</span></div>
+        <ul class="bullets">
+          <li>Boutique en ligne immersive en 3D avec visualisation des produits en temps réel</li>
+        </ul>
+        <div class="tags"><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">GSAP</span><span class="tag">Tailwind CSS</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Compétences</h2>
+      <div class="grid-2">
+        <div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Frontend</div>
+            <div class="skill-cat-items">React, JavaScript, TypeScript, Next.js, HTML5, CSS3, Tailwind CSS, Three.js, WordPress</div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Backend</div>
+            <div class="skill-cat-items">PHP, Laravel, MySQL, PostgreSQL, Prisma, Supabase</div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Intelligence artificielle</div>
+            <div class="skill-cat-items">Claude / Claude Code, développement assisté par IA, prompt engineering</div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Outils</div>
+            <div class="skill-cat-items">Git, GitHub, Vercel, Figma, Vite</div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Langues</div>
+            <div class="lang-row"><span class="lang-name">Arabe</span><span class="lang-level">Langue maternelle</span></div>
+            <div class="lang-row"><span class="lang-name">Français</span><span class="lang-level">Intermédiaire</span></div>
+            <div class="lang-row"><span class="lang-name">Anglais</span><span class="lang-level">Intermédiaire</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>Portfolio complet, démos en ligne et études de cas sur muad-portfolio.vercel.app</footer>
+  </div>
+
+  <script>
+    // ?lang=fr opens the French CV directly; choice also remembered per browser.
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.title = lang === 'fr' ? 'Mouad Sehli — CV' : 'Mouad Sehli — Resume';
+      document.querySelectorAll('.lang-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
+      const p = document.querySelector('.print-btn');
+      p.textContent = p.dataset[lang];
+      try { localStorage.setItem('cv-lang', lang); } catch (e) {}
+    }
+    let start = new URLSearchParams(location.search).get('lang');
+    if (start !== 'en' && start !== 'fr') { try { start = localStorage.getItem('cv-lang'); } catch (e) {} }
+    setLang(start === 'fr' ? 'fr' : 'en');
+  </script>
 </body>
 </html>
