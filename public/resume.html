@@ -44,7 +44,7 @@
       padding: 9px 18px;
       cursor: pointer;
     }
-    .print-btn { color: #fff; background: var(--accent); border: none; }
+    .print-btn { color: #fff; background: var(--accent); border: none; text-decoration: none; }
     .print-btn:hover { background: #007690; }
     .lang-btn { color: var(--muted); background: #fff; border: 1px solid var(--line); }
     .lang-btn[aria-pressed="true"] { color: var(--ink); border-color: var(--ink); }
@@ -191,9 +191,18 @@
     .qr-label { display: block; font-size: 9.5px; color: var(--faint); margin-top: 3px; }
 
     @media print {
-      body { background: #fff; }
+      @page { size: A4; margin: 12mm 14mm; }
+      html, body { background: #fff; }
       .print-bar { display: none; }
-      .page { box-shadow: none; margin: 0; padding: 28px 36px; max-width: 100%; }
+      .page { box-shadow: none; margin: 0; padding: 0; max-width: 100%; zoom: 0.88; }
+      header { padding-bottom: 14px; margin-bottom: 16px; }
+      section { margin-bottom: 16px; }
+      h2 { margin-bottom: 8px; }
+      .entry { margin-bottom: 10px; }
+      ul.bullets { margin-top: 3px; }
+      ul.bullets li { margin-bottom: 1px; }
+      .summary { font-size: 13px; line-height: 1.55; }
+      footer { display: none; }
       section { break-inside: avoid; }
       .entry { break-inside: avoid; }
     }
@@ -211,7 +220,7 @@
   <div class="print-bar">
     <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
     <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">Français</button>
-    <button class="print-btn" onclick="window.print()" data-en="Print / Save as PDF" data-fr="Imprimer / PDF">Print / Save as PDF</button>
+    <a class="print-btn" id="pdf-link" href="cv-mouad-sehli-en.pdf" download data-en="Download PDF" data-fr="Télécharger le PDF">Download PDF</a>
   </div>
 
   <!-- ===================== ENGLISH ===================== -->
@@ -502,6 +511,7 @@
       document.querySelectorAll('.lang-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
       const p = document.querySelector('.print-btn');
       p.textContent = p.dataset[lang];
+      p.href = 'cv-mouad-sehli-' + lang + '.pdf';
       try { localStorage.setItem('cv-lang', lang); } catch (e) {}
     }
     let start = new URLSearchParams(location.search).get('lang');
