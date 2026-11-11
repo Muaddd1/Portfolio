@@ -2,18 +2,7 @@ import proofImg from '../assets/screenshots/proof.jpg';
 import syntraImg from '../assets/screenshots/syntra.jpg';
 import vantaDetailImg from '../assets/screenshots/vanta-detail.jpg';
 import nexformImg from '../assets/screenshots/nexform.jpg';
-import fadehouseImg from '../assets/screenshots/fadehouse.jpg';
 import eloraImg from '../assets/screenshots/elora.jpg';
-import vellutoImg from '../assets/screenshots/velluto.jpg';
-import plinthImg from '../assets/screenshots/plinth.jpg';
-import aurumImg from '../assets/screenshots/aurum.jpg';
-import aureliaImg from '../assets/screenshots/aurelia.jpg';
-import novaraImg from '../assets/screenshots/novara.jpg';
-import nexaaiImg from '../assets/screenshots/nexaai.jpg';
-import techzoneImg from '../assets/screenshots/techzone.jpg';
-import freelancerosImg from '../assets/screenshots/freelanceros.jpg';
-import portfolioImg from '../assets/screenshots/portfolio.jpg';
-import clipflowImg from '../assets/screenshots/clipflow.jpg';
 
 export interface CaseStudy {
   problem: string;
@@ -84,18 +73,6 @@ export const projects: Project[] = [
     year: '2026',
   },
   {
-    id: 13,
-    title: 'FADEHOUSE',
-    description:
-      'A premium barbershop website template built to book a cut in under a minute: service, barber, calendar, time slots that respect opening hours, name and phone, then a confirmation with Google Calendar, .ics, directions and WhatsApp. A 3D cordless clipper built in code turns with scroll, with transparent stills on phones and weak devices, plus a light theme and structured data.',
-    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Three.js / R3F', 'Booking engine'],
-    image: fadehouseImg,
-    demo: 'https://muadme.gumroad.com/l/jyhztr',
-    demoUrl: 'https://fadehouse-muad1.vercel.app',
-    github: 'https://github.com/Muaddd1/FADEHOUSE',
-    year: '2026',
-  },
-  {
     id: 12,
     title: 'ÉLORA',
     description:
@@ -105,66 +82,6 @@ export const projects: Project[] = [
     demo: 'https://muadme.gumroad.com/l/phdwvf',
     demoUrl: 'https://elora-muad1.vercel.app',
     github: 'https://github.com/Muaddd1/ELORA',
-    year: '2026',
-  },
-  {
-    id: 11,
-    title: 'VELLUTO',
-    description:
-      'A cinematic, futuristic coffee-brand website template. A realistic 3D espresso cup with a scroll-driven camera that dives into the crema, an interactive origin map, a fully 3D bean-to-cup sequence (bean, roast, grind, brew), a working frontend shop, and adaptive quality that falls back to rendered stills on weak devices.',
-    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Three.js / R3F', 'Framer Motion', 'GSAP', 'Zustand'],
-    image: vellutoImg,
-    demo: 'https://muadme.gumroad.com/l/ydqpk',
-    demoUrl: 'https://velluto-muad1.vercel.app',
-    github: 'https://github.com/Muaddd1/VELLUTO',
-    year: '2026',
-  },
-  {
-    id: 10,
-    title: 'Plinth',
-    description:
-      'A premium, single-file HTML website template for interior design studios and boutique consultancy brands — no framework, no build step. A CSS-only 3D "material sample" hero scene, deliberately art-directed light/dark modes, 4 hand-built CSS portfolio compositions, a working validated contact form, and a keyboard-accessible flip card, all in one index.html.',
-    tags: ['HTML5', 'CSS3', 'Vanilla JS', 'No-Build', 'Single-File'],
-    image: plinthImg,
-    demo: 'https://muadme.gumroad.com/l/yzxssh',
-    demoUrl: 'https://plinth-template.vercel.app',
-    github: 'https://github.com/Muaddd1/PLINTH',
-    year: '2026',
-  },
-  {
-    id: 9,
-    title: 'AURUM',
-    description:
-      'A niche e-commerce storefront template built specifically for gold shops, jewelers, and jewelry brands — karats, gram weight, making charges, and certificates are first-class. Signature feature: a live Gold Price Calculator with a full currency-aware breakdown. Full Arabic/English bilingual support with true RTL layout, not just translated strings.',
-    tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Framer Motion', 'Zustand', 'i18n/RTL'],
-    image: aurumImg,
-    demo: 'https://muadme.gumroad.com/l/aurum',
-    demoUrl: 'https://aurum-template-muad1.vercel.app',
-    github: 'https://github.com/Muaddd1/AURUM',
-    year: '2026',
-  },
-  {
-    id: 8,
-    title: 'AURELIA',
-    description:
-      'A complete, production-ready luxury e-commerce storefront template. 13 routes, a dark-luxury design system with a light-mode variant, Framer Motion page transitions, Zustand cart/wishlist state, and a multi-step checkout built with React Hook Form + Zod. Every product image is visually verified brand-safe.',
-    tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Framer Motion', 'Zustand'],
-    image: aureliaImg,
-    demo: 'https://muadme.gumroad.com/l/zimpb',
-    demoUrl: 'https://aurelia-template-phi.vercel.app',
-    github: 'https://github.com/Muaddd1/AURELIA',
-    year: '2026',
-  },
-  {
-    id: 7,
-    title: 'ClipFlow',
-    description:
-      'The operating system for your content business. A command center for creators — idea vault with viral scoring, script studio, content calendar, sponsor CRM, analytics, and a repurpose workspace to turn one video into many formats. Built with Next.js 16, Tailwind CSS v4, and Radix UI.',
-    tags: ['Next.js 16', 'Tailwind CSS v4', 'Radix UI', 'TypeScript', 'localStorage'],
-    image: clipflowImg,
-    demo: 'https://clipflow-sepia.vercel.app',
-    demoUrl: 'https://clipflow-sepia.vercel.app',
-    github: 'https://github.com/Muaddd1/clipflow',
     year: '2026',
   },
   {
@@ -186,65 +103,5 @@ export const projects: Project[] = [
       result:
         'Mark one invoice paid, and the client\'s health score, the project\'s balance, and the dashboard totals all update correctly from that single change — nothing to remember to update in five places, nothing to go out of sync.',
     },
-  },
-  {
-    id: 1,
-    title: 'Portfolio',
-    description:
-      'My personal developer portfolio showcasing all projects. Built with React, Vite, Tailwind CSS, and Framer Motion. Features smooth animations, dark cyber aesthetic, and responsive design.',
-    tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Portfolio'],
-    image: portfolioImg,
-    demo: 'https://muad-portfolio.vercel.app',
-    demoUrl: 'https://muad-portfolio.vercel.app',
-    github: 'https://github.com/Muaddd1/Portfolio',
-    year: '2025',
-  },
-  {
-    id: 2,
-    title: 'Novara',
-    description:
-      'A complete AI SaaS platform template with warm luxury design. Features AI chat, templates, agents, analytics, team management, and full auth flow. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.',
-    tags: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'AI'],
-    image: novaraImg,
-    demo: 'https://muadme.gumroad.com/l/Novara',
-    demoUrl: 'https://novara-silk.vercel.app',
-    github: 'https://github.com/Muaddd1/Novara',
-    year: '2025',
-  },
-  {
-    id: 3,
-    title: 'TechZone Shop',
-    description:
-      'Immersive 3D e-commerce storefront built with React Three Fiber, Three.js, and Tailwind CSS. Features smooth animations, 3D product visuals, and a premium shopping experience.',
-    tags: ['React', 'Three.js', 'Tailwind CSS', 'GSAP', 'E-Commerce'],
-    image: techzoneImg,
-    demo: 'https://techzone-shop1.vercel.app',
-    demoUrl: 'https://techzone-shop1.vercel.app',
-    github: 'https://github.com/Muaddd1/TechZone-Shop',
-    year: '2025',
-  },
-  {
-    id: 4,
-    title: 'NexaAI',
-    description:
-      'Premium AI platform with intelligent automation, multi-model support, and enterprise features. A production-ready AI workspace for teams that demand excellence.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'AI', 'Enterprise'],
-    image: nexaaiImg,
-    demo: 'https://muadme.gumroad.com/l/Nexaai',
-    demoUrl: 'https://nexa-ai-silk.vercel.app',
-    github: 'https://github.com/Muaddd1/NexaAI',
-    year: '2025',
-  },
-  {
-    id: 5,
-    title: 'FreelancerOS',
-    description:
-      'A complete freelancer management SaaS — clients, projects, invoices, proposals, contracts, time tracking, expenses, leads, analytics, and automations. Built with Next.js 14, PostgreSQL, NextAuth, and premium dark mode UI.',
-    tags: ['Next.js 14', 'PostgreSQL', 'NextAuth', 'Prisma', 'SaaS'],
-    image: freelancerosImg,
-    demo: 'https://muadme.gumroad.com/l/FreelancerOS',
-    demoUrl: 'https://freelancer-os-gamma.vercel.app',
-    github: 'https://github.com/Muaddd1/FreelancerOS',
-    year: '2026',
-  },
+  }
 ];
