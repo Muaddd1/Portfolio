@@ -13,14 +13,14 @@ const highlights = [
     detail: 'Building production apps',
   },
   {
-    label: 'Websites',
-    value: '40+ Shipped',
-    detail: 'As part of a dev team, 2022–2025',
+    label: 'Education',
+    value: 'Digital Development',
+    detail: 'ISTA Taourirt, 2022–2024',
   },
   {
     label: 'Status',
-    value: 'Independent',
-    detail: 'Freelance & full-time, since 2025',
+    value: 'IT Specialist',
+    detail: 'Ministry of the Interior, since 2025',
   },
 ];
 
@@ -183,7 +183,7 @@ export default function About() {
                 <div className="pl-5">
                   <span className="text-[#ff7b72]">status</span>
                   <span className="text-white/50">: </span>
-                  <span className="text-[#7ee787]">'open to full-time & freelance'</span>
+                  <span className="text-[#7ee787]">'IT specialist @ Ministry of the Interior'</span>
                 </div>
                 <div>
                   <span className="text-[#a5d6ff]">{'}'}</span>

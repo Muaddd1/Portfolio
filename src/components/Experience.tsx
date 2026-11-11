@@ -2,40 +2,39 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
-    company: 'Independent',
-    role: 'Frontend Developer',
-    period: '2025 — Present',
-    location: 'Remote — Morocco',
+    company: 'Ministry of the Interior',
+    role: "IT Specialist (Agent d'autorité – Informaticien)",
+    period: 'Apr 2025 — Present',
+    location: 'Province of Taourirt, Morocco',
     highlights: [
-      'Went independent after building production frontend experience within a development team',
-      'Building and shipping frontend products end-to-end — from UI implementation to deployment',
-      'Open to both freelance projects and full-time roles',
+      "IT support and management of the provincial administration's computer systems",
+      'Helping staff and departments with digital tools and day-to-day technical issues',
+    ],
+    tech: ['IT Support', 'Systems', 'Networks'],
+  },
+  {
+    company: 'Freelance',
+    role: 'Frontend Developer',
+    period: 'Jun 2024 — Present',
+    location: 'Morocco',
+    highlights: [
+      'Developed websites and web interfaces for private clients',
+      'Turned client requirements and designs into working, responsive websites',
+      'Focused on clean, maintainable code that is easy to update',
     ],
     tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
   },
   {
-    company: 'Private Clients (NDA)',
-    role: 'Frontend Developer',
-    period: '2022 — 2025',
+    company: 'Family business',
+    role: 'Public Writer (Écrivain public)',
+    period: '2018 — 2023',
     location: 'Morocco',
     highlights: [
-      'Contributed frontend development to 40+ production websites as part of a development team',
-      'Worked directly inside internal teams — turning requirements and design handoffs into shipped features',
-      'Focused on clean, maintainable component architecture built to survive ongoing iteration',
+      'Wrote administrative letters, requests and forms for citizens',
+      'Helped people with their administrative procedures',
+      'Worked alongside my studies',
     ],
-    tech: ['JavaScript', 'CSS3', 'PHP', 'Figma'],
-  },
-  {
-    company: 'Self-Taught',
-    role: 'Web Development',
-    period: '2020 — 2022',
-    location: 'Morocco',
-    highlights: [
-      'Learned modern frontend development through hands-on project building',
-      'Completed 20+ personal projects across React, JavaScript, and CSS',
-      'Transitioned from static sites to full interactive web applications',
-    ],
-    tech: ['JavaScript', 'HTML5', 'CSS3', 'React'],
+    tech: ['Administration', 'Writing', 'Customer service'],
   },
 ];
 

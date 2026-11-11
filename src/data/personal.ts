@@ -14,7 +14,6 @@ export const personal = {
     description: `I'm a Frontend Developer specializing in modern, responsive, high-performance websites and web applications. From landing pages to full web apps, I transform designs into pixel-perfect, fast, and accessible digital experiences.`,
     stats: [
       { value: '3+', label: 'Years' },
-      { value: '40+', label: 'Websites' },
     ],
   },
 
